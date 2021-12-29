@@ -34,3 +34,4 @@
 *.app
 /cmake-build-debug/CMakeFiles/Monopoly.dir/CXX.includecache
 /cmake-build-debug/CMakeFiles/Monopoly.dir/depend.internal
+/cmake-build-debug/
