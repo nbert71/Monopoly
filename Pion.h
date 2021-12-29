@@ -7,6 +7,7 @@
 
 
 #include "Joueur.h"
+#include "Case.h"
 
 class Pion {
 private:
