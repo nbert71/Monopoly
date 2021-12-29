@@ -11,9 +11,12 @@
 using namespace std;
 
 class Joueur {
+
 private:
     string nom;
     Pion pion;
+
+protected:
     int solde;
 
 public:
