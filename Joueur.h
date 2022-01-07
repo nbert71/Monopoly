@@ -6,15 +6,16 @@
 #define MONOPOLY_JOUEUR_H
 
 #include <iostream>
-#include "Pion.h"
+
 
 using namespace std;
 
+class Pion;
 class Joueur {
 
 private:
     string nom;
-    Pion pion;
+    Pion* pion;
 
 protected:
     int solde;
@@ -25,7 +26,7 @@ public:
     const Pion &getPion() const;
     int getSolde() const;
     void setNom(const string &nom);
-    void setPion(const Pion &pion);
+    void setPion(Pion* pion);
     void setSolde(int solde);
     void jouer();
     void crediter(const int montant);

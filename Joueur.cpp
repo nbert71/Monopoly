@@ -2,6 +2,7 @@
 // Created by nicob on 29/12/2021.
 //
 
+#include "Pion.h"
 #include "Joueur.h"
 
 const string &Joueur::getNom() const {
@@ -9,7 +10,7 @@ const string &Joueur::getNom() const {
 }
 
 const Pion &Joueur::getPion() const {
-    return pion;
+    return *(pion);
 }
 
 int Joueur::getSolde() const {
@@ -20,8 +21,8 @@ void Joueur::setNom(const string &nom) {
     Joueur::nom = nom;
 }
 
-void Joueur::setPion(const Pion &pion) {
-    Joueur::pion = pion;
+void Joueur::setPion(Pion* pion) {
+	Joueur::pion = pion;
 }
 
 void Joueur::setSolde(int solde) {

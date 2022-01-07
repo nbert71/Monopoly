@@ -6,12 +6,12 @@
 #define MONOPOLY_PLATEAU_H
 
 
-#include "Joueur.h"
+
 #include "Case.h"
 
 class Plateau {
 private:
-    Case case;
+    Case casee;
 };
 
 
