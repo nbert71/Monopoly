@@ -5,9 +5,9 @@
 #ifndef MONOPOLY_PRISON_H
 #define MONOPOLY_PRISON_H
 
-#import "Case.h"
+#include "Case.h"
 
-#import <iostream>
+#include <iostream>
 using namespace std;
 
 

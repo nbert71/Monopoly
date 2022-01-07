@@ -5,9 +5,9 @@
 #ifndef MONOPOLY_COMMUNAUTE_H
 #define MONOPOLY_COMMUNAUTE_H
 
-#import "Case.h"
+#include "Case.h"
 
-#import <iostream>
+#include <iostream>
 using namespace std;
 
 class Communaute : public Case {

@@ -10,6 +10,9 @@
 #include "Case.h"
 
 
+using namespace std;
+
+
 class Pion {
 private:
     Joueur joueur;
