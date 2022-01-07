@@ -5,9 +5,9 @@
 #ifndef MONOPOLY_CHANCE_H
 #define MONOPOLY_CHANCE_H
 
-#import "Case.h"
+#include "Case.h"
 
-#import <iostream>
+#include <iostream>
 using namespace std;
 
 class Chance : public Case{

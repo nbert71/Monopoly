@@ -5,9 +5,9 @@
 #ifndef MONOPOLY_DEPART_H
 #define MONOPOLY_DEPART_H
 
-#import "Case.h"
+#include "Case.h"
 
-#import <iostream>
+#include <iostream>
 using namespace std;
 
 class Depart : public Case{
