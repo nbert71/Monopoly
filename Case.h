@@ -14,7 +14,7 @@ using namespace std;
 class Case {
 private:
     string nom;
-    Case suivante;
+    Case* suivante;
 
 public:
     Case();
@@ -27,10 +27,10 @@ public:
         this->nom = nom;
     }
     Case getSuivante(){
-        return this->suivante;
+        return *(this->suivante);
     }
     void setSuivante(Case suiv){
-        this->suivante = suiv;
+        this->suivante = &suiv;
     }
 };
 
