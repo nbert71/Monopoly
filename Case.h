@@ -5,9 +5,9 @@
 #ifndef MONOPOLY_CASE_H
 #define MONOPOLY_CASE_H
 
-#import "Plateau.h"
+#include "Plateau.h"
 
-#import <iostream>
+#include <iostream>
 using namespace std;
 
 
