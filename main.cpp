@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Jeu.h"
+#include "De.h"
 
 int main()
 {
@@ -13,6 +14,11 @@ int main()
 
     Plateau p;
     p.addCase(c);
+
+    De d(6);
+    d.roll();
+    cout << d.getValeur() << endl;
+
 
     return 0;
 }

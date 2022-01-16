@@ -27,3 +27,7 @@ const Plateau &Jeu::getPlateau() const {
 void Jeu::setPlateau(const Plateau &p) {
     Jeu::plateau = p;
 }
+
+void Jeu::addDe(De d) {
+    this->des.push_back(d);
+}
