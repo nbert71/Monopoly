@@ -3,7 +3,7 @@
 //
 
 #include "Jeu.h"
-
+#include "De.h"
 #include <iostream>
 using namespace std;
 

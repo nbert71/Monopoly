@@ -7,8 +7,8 @@
 
 
 #include "Plateau.h"
-#include "De.h"
 
+class De;
 class Jeu {
 
 private:

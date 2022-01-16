@@ -4,10 +4,12 @@
 
 #ifndef MONOPOLY_DE_H
 #define MONOPOLY_DE_H
+#include "Jeu.h"
 
 
 class De {
 private:
+    Jeu jeu;
     int nbFaces{};
     int valeur{};
 
