@@ -4,6 +4,9 @@
 
 #include "De.h"
 #include <experimental/random>
+#include <chrono>
+#include <random>
+
 
 De::De(int n) {
     this->setNbFaces(n);
@@ -23,7 +26,10 @@ int De::getValeur() const {
 }
 
 int De::roll() {
-    this->valeur = std::experimental::randint(1, this->nbFaces);
+    unsigned seed { static_cast<unsigned> (std::chrono::system_clock::now().time_since_epoch().count()) };
+    std::default_random_engine prng(seed);
+    std::uniform_int_distribution<int> dist(1, this->nbFaces);
+    this->valeur = dist(prng);
 }
 
 const Jeu &De::getJeu() const {
