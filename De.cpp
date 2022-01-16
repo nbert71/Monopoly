@@ -25,3 +25,11 @@ int De::getValeur() const {
 int De::roll() {
     this->valeur = std::experimental::randint(1, this->nbFaces);
 }
+
+const Jeu &De::getJeu() const {
+    return jeu;
+}
+
+void De::setJeu(const Jeu &j) {
+    De::jeu = j;
+}

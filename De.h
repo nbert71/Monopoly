@@ -19,6 +19,10 @@ public:
     void setNbFaces(int nbFaces);
 
     int getValeur() const;
+
+    const Jeu &getJeu() const;
+    void setJeu(const Jeu &jeu);
+
     int roll();
 };
 

@@ -12,7 +12,7 @@ Jeu::Jeu() {
 }
 
 int Jeu::getTourdejeu() const {
-    cout << "Tour de jeu : " << this->tourdejeu << endl;
+    //cout << "Tour de jeu : " << this->tourdejeu << endl;
     return tourdejeu;
 }
 
@@ -30,4 +30,8 @@ void Jeu::setPlateau(const Plateau &p) {
 
 void Jeu::addDe(De d) {
     this->des.push_back(d);
+}
+
+const vector<De> &Jeu::getDes() const {
+    return des;
 }

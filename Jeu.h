@@ -25,6 +25,7 @@ public:
     void setPlateau(const Plateau &plateau);
 
     void addDe(De d);
+    const vector<De> &getDes() const;
 
 };
 

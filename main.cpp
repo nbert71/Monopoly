@@ -17,7 +17,9 @@ int main()
 
     De d(6);
     d.roll();
-    cout << d.getValeur() << endl;
+    cout << "valeur " << d.getValeur() << endl;
+    j.addDe(d);
+    cout << "valeur par jeu " << j.getDes()[0].getValeur() << endl;
 
 
 

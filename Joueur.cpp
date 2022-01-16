@@ -34,11 +34,11 @@ void Joueur::jouer() {
 }
 
 void Joueur::crediter(const int montant) {
-
+    this->solde += montant;
 }
 
 void Joueur::debiter(const int montant) {
-
+    this->solde -= montant;
 }
 
 void Joueur::operation() {
