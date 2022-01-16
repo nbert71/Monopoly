@@ -8,10 +8,17 @@
 
 
 #include "Case.h"
+#include<vector>
 
 class Plateau {
 private:
-    Case casee;
+    std::vector<Case> cases;
+
+public:
+    Plateau();
+    const vector<Case> &getCases() const;
+    void addCase(const Case& c);
+    void displayCases();
 };
 
 

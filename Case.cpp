@@ -3,3 +3,9 @@
 //
 
 #include "Case.h"
+
+#include <utility>
+
+Case::Case(string s) {
+    this->nom = std::move(s);
+}

@@ -6,13 +6,20 @@
 #define MONOPOLY_JEU_H
 
 
+#include "Plateau.h"
+
 class Jeu {
 
 private:
     int tourdejeu;
-
+    Plateau plateau;
 public:
-    int compteur();
+    Jeu();
+    int getTourdejeu() const;
+    void setTourdejeu(int tourdejeu);
+
+    const Plateau &getPlateau() const;
+    void setPlateau(const Plateau &plateau);
 };
 
 

@@ -7,30 +7,31 @@
 
 
 #include <iostream>
+#include <utility>
 using namespace std;
 
 
 class Case {
 private:
     string nom;
-    Case* suivante;
+    //Case* suivante;
 
 public:
-    Case();
+    explicit Case(string s);
 
-    void arreterSur();
+    //void arreterSur();
     string getNom(){
         return this->nom;
     }
-    void setNom(string nom){
-        this->nom = nom;
+    void setNom(string n){
+        this->nom = std::move(n);
     }
-    Case getSuivante(){
-        return *(this->suivante);
-    }
-    void setSuivante(Case suiv){
-        this->suivante = &suiv;
-    }
+//    Case getSuivante(){
+//        return *(this->suivante);
+//    }
+//    void setSuivante(Case suiv){
+//        this->suivante = &suiv;
+//    }
 };
 
 
