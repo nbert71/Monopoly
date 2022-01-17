@@ -13,6 +13,7 @@ using namespace std;
 
 class Prison : public Case{ // @suppress("Class has a virtual method and non-virtual destructor")
 public:
+	Prison():Case("Prison");
     void arreterSur();
 };
 
