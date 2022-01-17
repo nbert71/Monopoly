@@ -21,7 +21,9 @@ void Terrain::setCouleur(const string &couleur) {
     Terrain::couleur = couleur;
 }
 
+
 void Terrain::arreterSur() {
     //Case::arreterSur();
 }
+
 

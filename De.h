@@ -6,6 +6,7 @@
 #define MONOPOLY_DE_H
 
 
+
 #include <chrono>
 #include <random>
 
@@ -29,6 +30,7 @@ public:
     const Jeu &getJeu() const;
     void setJeu(Jeu *jeu);
     void roll();
+
 };
 
 

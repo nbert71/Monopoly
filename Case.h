@@ -13,12 +13,15 @@ using namespace std;
 
 class Case { // @suppress("Class has a virtual method and non-virtual destructor")
 private:
+
     Case* suivante;
+
 
 protected:
     string nom;
 
 public:
+
     Case();
     Case(string nom);
 
@@ -27,11 +30,13 @@ public:
     virtual void arreterSur();
 
 
+
     string getNom(){
         return this->nom;
     }
     void setNom(string n){
         this->nom = std::move(n);
+
     }
 
     virtual void affiche(){
@@ -44,6 +49,7 @@ public:
 	void setSuivante(Case* suiv){
 		this->suivante = suiv;
 	}
+
 };
 
 

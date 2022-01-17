@@ -8,9 +8,11 @@
 
 
 #include "Case.h"
+#include<vector>
 
 class Plateau {
 private:
+
     Case* cases;
 
 public:
@@ -21,6 +23,7 @@ public:
     void lierCases(Case* c);
 
     void affichePlateau();
+
 };
 
 

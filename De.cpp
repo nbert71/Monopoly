@@ -3,6 +3,7 @@
 //
 
 #include "De.h"
+
 #include "Jeu.h"
 
 
@@ -15,6 +16,7 @@ De::~De(){
 
 }
 
+
 int De::getNbFaces() const {
     return nbFaces;
 }
@@ -22,6 +24,7 @@ int De::getNbFaces() const {
 void De::setNbFaces(int nb) {
     De::nbFaces = nb;
 }
+
 
 int De::getValeur() {
     return valeur;
@@ -40,4 +43,5 @@ void De::roll() {
 	std::default_random_engine prng(seed);
 	std::uniform_int_distribution<int> dist(1, this->nbFaces);
 	this->valeur = dist(prng);
+
 }

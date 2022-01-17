@@ -7,8 +7,10 @@
 
 
 #include "Plateau.h"
+
 #include "Gobelet.h"
 #include "Joueur.h"
+
 
 class De;
 class Jeu {
@@ -21,11 +23,13 @@ private:
 
 public:
     Jeu(int nbJoueurs = 4);
+
     int getTourdejeu() const;
     void setTourdejeu(int tourdejeu);
 
     const Plateau &getPlateau() const;
     void setPlateau(const Plateau &plateau);
+
 
     const Gobelet &getGobelet() const{
     	return *this->gobelet;
@@ -36,6 +40,7 @@ public:
 
     const Joueur* getJoueurs(){return this->joueurs;}
     void setJoueurs(Joueur* joueurs){this->joueurs = joueurs;}
+
 };
 
 

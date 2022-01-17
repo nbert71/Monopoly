@@ -2,6 +2,7 @@
 #include "Jeu.h"
 #include "De.h"
 
+
 using namespace std;
 
 #include "Compagnie.h"
@@ -18,5 +19,6 @@ int main()
     p.affichePlateau();
     p.lierCases(new Terrain("Rue de la pie", "rouge", 500, 10));
     p.affichePlateau();
+
     return 0;
 }

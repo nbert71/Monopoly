@@ -4,6 +4,7 @@
 
 #include "Jeu.h"
 #include "De.h"
+
 #include "Gobelet.h"
 #include <iostream>
 using namespace std;
@@ -12,6 +13,7 @@ Jeu::Jeu(int nbJoueurs) {
     this->tourdejeu = 1;
     this->gobelet = new Gobelet(6);
     this->joueurs = new Joueur[nbJoueurs];
+
 }
 
 int Jeu::getTourdejeu() const {
@@ -25,6 +27,7 @@ void Jeu::setTourdejeu(int t) {
 
 const Plateau &Jeu::getPlateau() const {
     return plateau;
+
 }
 
 void Jeu::setPlateau(const Plateau &p) {

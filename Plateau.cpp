@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "Plateau.h"
+
 #include "Depart.h"
 
 Plateau::Plateau(){
@@ -41,3 +42,4 @@ void Plateau::affichePlateau(){
 	}
 	cout << endl;
 }
+

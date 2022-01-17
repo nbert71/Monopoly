@@ -18,7 +18,7 @@ public:
 
     const string &getCouleur() const;
     void setCouleur(const string &couleur);
-    void arreterSur();
+//    void arreterSur();
 };
 
 

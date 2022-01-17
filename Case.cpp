@@ -5,6 +5,7 @@
 #include "Case.h"
 
 
+
 Case::Case(){
 	this->nom = "";
 	this->suivante = NULL;
@@ -20,4 +21,5 @@ Case::~Case(){
 }
 
 void Case::arreterSur(){
+
 }
