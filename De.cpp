@@ -3,13 +3,16 @@
 //
 
 #include "De.h"
-#include <chrono>
-#include <random>
+
 
 
 De::De(int n) {
-    this->setNbFaces(n);
+    this->nbFaces = n;
     roll();
+}
+
+De::~De(){
+
 }
 
 int De::getNbFaces() const {
@@ -20,16 +23,9 @@ void De::setNbFaces(int nb) {
     De::nbFaces = nb;
 }
 
-int De::getValeur() const {
+int De::getValeur() {
+	roll();
     return valeur;
-}
-
-int De::roll() {
-    unsigned seed { static_cast<unsigned> (std::chrono::system_clock::now().time_since_epoch().count()) };
-    std::default_random_engine prng(seed);
-    std::uniform_int_distribution<int> dist(1, this->nbFaces);
-    this->valeur = dist(prng);
-    return this->valeur;
 }
 
 const Jeu &De::getJeu() const {

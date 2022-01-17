@@ -6,6 +6,8 @@
 #define MONOPOLY_DE_H
 #include "Jeu.h"
 
+#include <chrono>
+#include <random>
 
 class De {
 private:
@@ -13,17 +15,26 @@ private:
     int nbFaces{};
     int valeur{};
 
+
+
 public:
-    explicit De(int n);
+    De(int n);
+    ~De();
     int getNbFaces() const;
     void setNbFaces(int nbFaces);
 
-    int getValeur() const;
+    int getValeur();
 
     const Jeu &getJeu() const;
     void setJeu(const Jeu &jeu);
 
-    int roll();
+private:
+    void roll() {
+		unsigned seed { static_cast<unsigned> (std::chrono::system_clock::now().time_since_epoch().count()) };
+		std::default_random_engine prng(seed);
+		std::uniform_int_distribution<int> dist(1, this->nbFaces);
+		this->valeur = dist(prng);
+	}
 };
 
 

@@ -23,7 +23,6 @@ public:
     const Plateau &getPlateau() const;
     void setPlateau(const Plateau &plateau);
 
-    void addDe(De d);
 
 };
 
