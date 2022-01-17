@@ -28,10 +28,6 @@ void Jeu::setPlateau(const Plateau &p) {
     Jeu::plateau = p;
 }
 
-void Jeu::addDe(De d) {
-    this->des.push_back(d);
-}
 
-const vector<De> &Jeu::getDes() const {
-    return des;
-}
+
+

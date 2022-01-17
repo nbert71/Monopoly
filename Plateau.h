@@ -8,15 +8,17 @@
 
 
 #include "Case.h"
-#include<vector>
 
 class Plateau {
 private:
-    Case casee;
+    Case* cases;
 
 public:
+    Plateau();
+    ~Plateau();
+
     void creerCases();
-    void lierCases(Case c);
+    void lierCases(Case& c);
 };
 
 

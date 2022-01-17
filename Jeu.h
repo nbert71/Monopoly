@@ -14,7 +14,6 @@ class Jeu {
 private:
     int tourdejeu;
     Plateau plateau;
-    std::vector<De> des;
 
 public:
     Jeu();
@@ -25,7 +24,6 @@ public:
     void setPlateau(const Plateau &plateau);
 
     void addDe(De d);
-    const vector<De> &getDes() const;
 
 };
 

@@ -33,11 +33,11 @@ public:
     void setNom(string n){
         this->nom = std::move(n);
     }
-    Case getSuivante(){
-    	return *(this->suivante);
+    Case* getSuivante(){
+    	return this->suivante;
     }
-    void setSuivante(Case suiv){
-        this->suivante = &suiv;
+    void setSuivante(Case* suiv){
+        this->suivante = suiv;
     }
 };
 
