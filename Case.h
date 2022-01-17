@@ -7,17 +7,24 @@
 
 
 #include <iostream>
+#include <utility>
 using namespace std;
 
 
 class Case { // @suppress("Class has a virtual method and non-virtual destructor")
 private:
+<<<<<<< HEAD
     Case* suivante;
+=======
+    string nom;
+    //Case* suivante;
+>>>>>>> cf670d1547456c0dfa1edcd215b39adc9c88471a
 
 protected:
     string nom;
 
 public:
+<<<<<<< HEAD
     Case();
     Case(string nom);
 
@@ -25,18 +32,23 @@ public:
 
     virtual void arreterSur();
 
+=======
+    explicit Case(string s);
+
+    //void arreterSur();
+>>>>>>> cf670d1547456c0dfa1edcd215b39adc9c88471a
     string getNom(){
         return this->nom;
     }
-    void setNom(string nom){
-        this->nom = nom;
+    void setNom(string n){
+        this->nom = std::move(n);
     }
-    Case getSuivante(){
-        return *(this->suivante);
-    }
-    void setSuivante(Case suiv){
-        this->suivante = &suiv;
-    }
+//    Case getSuivante(){
+//        return *(this->suivante);
+//    }
+//    void setSuivante(Case suiv){
+//        this->suivante = &suiv;
+//    }
 };
 
 
