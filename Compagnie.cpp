@@ -3,3 +3,16 @@
 //
 
 #include "Compagnie.h"
+
+Compagnie::Compagnie(string nom,int loyer,int prixAchat):
+Propriete(nom,loyer,prixAchat){
+
+}
+
+Compagnie::~Compagnie(){
+
+}
+
+void Compagnie::arreterSur(){
+
+}

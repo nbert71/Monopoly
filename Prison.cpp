@@ -3,3 +3,12 @@
 //
 
 #include "Prison.h"
+
+
+Prison::~Prison(){
+
+}
+
+void Prison::arreterSur(){
+
+}

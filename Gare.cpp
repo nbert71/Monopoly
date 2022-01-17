@@ -3,3 +3,16 @@
 //
 
 #include "Gare.h"
+
+Gare::Gare(string nom,int loyer,int prixAchat):
+Propriete(nom,loyer,prixAchat){
+
+}
+
+Gare::~Gare(){
+
+}
+
+void Gare::arreterSur(){
+
+}

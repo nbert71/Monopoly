@@ -8,8 +8,11 @@
 
 #include "Propriete.h"
 
-class Compagnie : public Propriete {
-
+class Compagnie : public Propriete { // @suppress("Class has a virtual method and non-virtual destructor")
+public:
+	Compagnie(string nom,int loyer=0,int prixAchat=0);
+	~Compagnie();
+	void arreterSur();
 };
 
 

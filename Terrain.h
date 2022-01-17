@@ -13,6 +13,9 @@ private:
     string couleur;
 
 public:
+    Terrain(string nom="",string couleur="",int loyer = 0, int prixAchat = 0);
+    ~Terrain();
+
     const string &getCouleur() const;
     void setCouleur(const string &couleur);
 //    void arreterSur();

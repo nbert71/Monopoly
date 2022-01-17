@@ -1,25 +1,45 @@
 //
 // Created by Arthur on 29/12/2021.
 //
-
+#include <iostream>
 #include "Plateau.h"
 
+#include "Depart.h"
 
-
-
-const vector<Case> &Plateau::getCases() const {
-    return cases;
+Plateau::Plateau(){
+	this->cases = new Depart();
 }
 
-void Plateau::addCase(const Case& c) {
-    this->cases.push_back(c);
+Plateau::~Plateau(){
+
 }
 
-void Plateau::displayCases() {
-    for (int i = 0; i < this->cases.size(); i++) {
-        cout << this->cases[i].getNom() << endl;
-    }
+void Plateau::creerCases(){
+	Case* c = this->cases;
+	while(c->getSuivante() != NULL){
+		c = c->getSuivante();
+	}
+	c->setSuivante(new Case());
 }
 
-Plateau::Plateau() = default;
+void Plateau::lierCases(Case* ca){
+	Case* c = this->cases;
+	while(c->getSuivante() != NULL){
+		c = c->getSuivante();
+	}
+	c->setSuivante(new Case());
+	c->setSuivante(ca);
+}
+
+void Plateau::affichePlateau(){
+	this->cases->affiche();
+	cout << " ,";
+	Case* c = this->cases->getSuivante();
+	while (c != NULL){
+		c->affiche();
+		cout << " ,";
+		c = c->getSuivante();
+	}
+	cout << endl;
+}
 

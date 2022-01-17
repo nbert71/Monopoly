@@ -3,3 +3,11 @@
 //
 
 #include "Communaute.h"
+
+Communaute::~Communaute(){
+
+}
+
+void Communaute::arreterSur(){
+
+}

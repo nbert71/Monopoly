@@ -4,8 +4,22 @@
 
 #include "Case.h"
 
-#include <utility>
 
-Case::Case(string s) {
-    this->nom = std::move(s);
+
+Case::Case(){
+	this->nom = "";
+	this->suivante = NULL;
+}
+
+Case::Case(string nom){
+	this->nom = nom;
+	this->suivante = NULL;
+}
+
+Case::~Case(){
+
+}
+
+void Case::arreterSur(){
+
 }

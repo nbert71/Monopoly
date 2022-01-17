@@ -12,13 +12,18 @@
 
 class Plateau {
 private:
-    std::vector<Case> cases;
+
+    Case* cases;
 
 public:
     Plateau();
-    const vector<Case> &getCases() const;
-    void addCase(const Case& c);
-    void displayCases();
+    ~Plateau();
+
+    void creerCases();
+    void lierCases(Case* c);
+
+    void affichePlateau();
+
 };
 
 

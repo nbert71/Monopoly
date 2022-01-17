@@ -4,26 +4,33 @@
 
 #ifndef MONOPOLY_DE_H
 #define MONOPOLY_DE_H
-#include "Jeu.h"
 
 
+
+#include <chrono>
+#include <random>
+
+class Jeu;
 class De {
 private:
-    Jeu jeu;
+    Jeu* jeu;
     int nbFaces{};
     int valeur{};
 
+
+
 public:
-    explicit De(int n);
+    De(int n);
+    ~De();
     int getNbFaces() const;
     void setNbFaces(int nbFaces);
 
-    int getValeur() const;
+    int getValeur();
 
     const Jeu &getJeu() const;
-    void setJeu(const Jeu &jeu);
+    void setJeu(Jeu *jeu);
+    void roll();
 
-    int roll();
 };
 
 

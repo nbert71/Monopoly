@@ -3,3 +3,11 @@
 //
 
 #include "Depart.h"
+
+Depart::~Depart(){
+
+}
+
+void Depart::arreterSur(){
+
+}

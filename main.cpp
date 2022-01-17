@@ -2,26 +2,23 @@
 #include "Jeu.h"
 #include "De.h"
 
+
+using namespace std;
+
+#include "Compagnie.h"
+#include "Depart.h"
+#include "Terrain.h"
+#include "Joueur.h"
+
 int main()
 {
-    Jeu j;
-    int n = j.getTourdejeu();
-
-    Case c("coucou");
-    //cout << c.getNom() << endl;
-    c.setNom("salut");
-    //cout << c.getNom() << endl;
-
-    Plateau p;
-    p.addCase(c);
-
-    De d(6);
-    d.roll();
-    cout << "valeur " << d.getValeur() << endl;
-    j.addDe(d);
-    cout << "valeur par jeu " << j.getDes()[0].getValeur() << endl;
-
-
+	Joueur j = Joueur("Bertaux");
+	j.afficheSolde();
+    Depart d = Depart();
+    Plateau p = Plateau();
+    p.affichePlateau();
+    p.lierCases(new Terrain("Rue de la pie", "rouge", 500, 10));
+    p.affichePlateau();
 
     return 0;
 }
