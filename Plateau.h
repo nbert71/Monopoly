@@ -16,7 +16,7 @@ private:
 
 public:
     void creerCases();
-    void lierCases();
+    void lierCases(Case c);
 };
 
 

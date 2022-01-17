@@ -31,8 +31,6 @@ public:
     void jouer();
     void crediter(const int montant);
     void debiter(const int montant);
-
-
 };
 
 
