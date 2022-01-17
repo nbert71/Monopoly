@@ -8,9 +8,10 @@
 #include <iostream>
 using namespace std;
 
-Jeu::Jeu() {
+Jeu::Jeu(int nbJoueurs) {
     this->tourdejeu = 1;
     this->gobelet = new Gobelet(6);
+    this->joueurs = new Joueur[nbJoueurs];
 }
 
 int Jeu::getTourdejeu() const {

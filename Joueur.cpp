@@ -4,6 +4,14 @@
 
 #include "Pion.h"
 #include "Joueur.h"
+#include "Jeu.h"
+
+Joueur::Joueur(string nom, Jeu* jeu, Pion* p, int solde){
+	this->nom = nom;
+	this->pion = p;
+	this->solde = solde;
+	this->jeu = jeu;
+}
 
 const string &Joueur::getNom() const {
     return nom;
@@ -43,4 +51,8 @@ void Joueur::debiter(const int montant) {
 
 void Joueur::operation() {
 
+}
+
+void Joueur::afficheSolde(){
+	cout <<this->nom <<" a "<< this->solde << " $" << endl;
 }
