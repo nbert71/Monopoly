@@ -13,5 +13,5 @@ void Terrain::setCouleur(const string &couleur) {
 }
 
 void Terrain::arreterSur() {
-    Case::arreterSur();
+    //Case::arreterSur();
 }

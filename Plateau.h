@@ -12,6 +12,10 @@
 class Plateau {
 private:
     Case casee;
+
+public:
+    void creerCases();
+    void lierCases();
 };
 
 

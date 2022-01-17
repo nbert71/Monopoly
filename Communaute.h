@@ -10,7 +10,7 @@
 #include <iostream>
 using namespace std;
 
-class Communaute : public Case {
+class Communaute : public Case { // @suppress("Class has a virtual method and non-virtual destructor")
 public:
     void arreterSur();
 };

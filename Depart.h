@@ -10,7 +10,7 @@
 #include <iostream>
 using namespace std;
 
-class Depart : public Case{
+class Depart : public Case{ // @suppress("Class has a virtual method and non-virtual destructor")
 public:
     void arreterSur();
 };

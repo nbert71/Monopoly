@@ -10,15 +10,21 @@
 using namespace std;
 
 
-class Case {
+class Case { // @suppress("Class has a virtual method and non-virtual destructor")
 private:
-    string nom;
     Case* suivante;
+
+protected:
+    string nom;
 
 public:
     Case();
+    Case(string nom);
 
-    void arreterSur();
+    virtual ~Case();
+
+    virtual void arreterSur();
+
     string getNom(){
         return this->nom;
     }
