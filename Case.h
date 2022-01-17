@@ -33,12 +33,17 @@ public:
     void setNom(string n){
         this->nom = std::move(n);
     }
+
+    virtual void affiche(){
+    	cout << this->nom ;
+    }
+
     Case* getSuivante(){
-    	return this->suivante;
-    }
-    void setSuivante(Case* suiv){
-        this->suivante = suiv;
-    }
+		return this->suivante;
+	}
+	void setSuivante(Case* suiv){
+		this->suivante = suiv;
+	}
 };
 
 

@@ -3,3 +3,11 @@
 //
 
 #include "Chance.h"
+
+Chance::~Chance(){
+
+}
+
+void Chance::arreterSur(){
+
+}

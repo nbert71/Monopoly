@@ -13,6 +13,7 @@ using namespace std;
 class Depart : public Case{ // @suppress("Class has a virtual method and non-virtual destructor")
 public:
 	Depart():Case("Depart"){};
+	~Depart();
     void arreterSur();
 };
 

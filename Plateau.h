@@ -18,7 +18,9 @@ public:
     ~Plateau();
 
     void creerCases();
-    void lierCases(Case& c);
+    void lierCases(Case* c);
+
+    void affichePlateau();
 };
 
 

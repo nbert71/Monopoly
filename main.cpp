@@ -2,11 +2,23 @@
 #include "Jeu.h"
 #include "De.h"
 
+using namespace std;
+
 #include "Compagnie.h"
+#include "Depart.h"
+
 
 int main()
 {
 	Compagnie c ("yo");
-    std::cout<< c.getNom() <<std::endl;
+    cout<< c.getNom() <<endl;
+
+    Depart d = Depart();
+    Plateau p = Plateau();
+    p.affichePlateau();
+    p.creerCases();
+    p.affichePlateau();
+    p.lierCases(&d);
+    p.affichePlateau();
     return 0;
 }
