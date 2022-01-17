@@ -3,7 +3,7 @@
 //
 
 #include "De.h"
-
+#include "Jeu.h"
 
 
 De::De(int n) {
@@ -24,14 +24,20 @@ void De::setNbFaces(int nb) {
 }
 
 int De::getValeur() {
-	roll();
     return valeur;
 }
 
 const Jeu &De::getJeu() const {
-    return jeu;
+    return *jeu;
 }
 
-void De::setJeu(const Jeu &j) {
-    De::jeu = j;
+void De::setJeu(Jeu *j) {
+    this->jeu = j;
+}
+
+void De::roll() {
+	unsigned seed { static_cast<unsigned> (std::chrono::system_clock::now().time_since_epoch().count()) };
+	std::default_random_engine prng(seed);
+	std::uniform_int_distribution<int> dist(1, this->nbFaces);
+	this->valeur = dist(prng);
 }

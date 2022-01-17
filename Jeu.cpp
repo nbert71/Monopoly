@@ -4,11 +4,13 @@
 
 #include "Jeu.h"
 #include "De.h"
+#include "Gobelet.h"
 #include <iostream>
 using namespace std;
 
 Jeu::Jeu() {
     this->tourdejeu = 1;
+    this->gobelet = new Gobelet(6);
 }
 
 int Jeu::getTourdejeu() const {

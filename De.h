@@ -4,14 +4,15 @@
 
 #ifndef MONOPOLY_DE_H
 #define MONOPOLY_DE_H
-#include "Jeu.h"
+
 
 #include <chrono>
 #include <random>
 
+class Jeu;
 class De {
 private:
-    Jeu jeu;
+    Jeu* jeu;
     int nbFaces{};
     int valeur{};
 
@@ -26,15 +27,8 @@ public:
     int getValeur();
 
     const Jeu &getJeu() const;
-    void setJeu(const Jeu &jeu);
-
-private:
-    void roll() {
-		unsigned seed { static_cast<unsigned> (std::chrono::system_clock::now().time_since_epoch().count()) };
-		std::default_random_engine prng(seed);
-		std::uniform_int_distribution<int> dist(1, this->nbFaces);
-		this->valeur = dist(prng);
-	}
+    void setJeu(Jeu *jeu);
+    void roll();
 };
 
 
