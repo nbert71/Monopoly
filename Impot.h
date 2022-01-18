@@ -11,12 +11,21 @@
 #include <iostream>
 using namespace std;
 
-#include "Propriete.h"
+#include "Case.h"
 
-class Impot: public Propriete {
+class Impot: public Case {
+private:
+	int loyer;
 public:
-	Impot(string nom = "",int loyer = 0):Propriete(nom,loyer,0){};// on met 0 parce qu'il n'y a pas de prix d'achat
+	Impot(string nom = "",int loyer = 0):Case(nom){this->loyer = loyer;}
 	virtual ~Impot();
+
+	int getLoyer() const;
+	void setLoyer(int loyer);
+
+	void affiche(){
+		cout << this->nom << " " << loyer ;
+	}
 };
 
 #endif /* IMPOT_H_ */
