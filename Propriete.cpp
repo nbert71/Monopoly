@@ -8,6 +8,7 @@ Propriete::Propriete(string nom, int loyer,int prixAchat):
 Case(nom){
 	this->loyer = loyer;
 	this->prixAchat = prixAchat;
+	this->proprietaire=NULL;
 }
 
 Propriete::~Propriete(){
