@@ -19,7 +19,7 @@ private:
     int tourdejeu;
     int nbJoueurs;
     Plateau plateau;
-    Gobelet* gobelet;
+    Gobelet gobelet;
     Joueur* joueurs;
     int nJoueur;
 
@@ -35,10 +35,10 @@ public:
     void init(int nb=0,string nom = "", string c = "");
 
     Gobelet getGobelet(){
-    	return *this->gobelet;
+    	return this->gobelet;
     }
     void setGobelet(Gobelet& gobelet){
-    	this->gobelet = &gobelet;
+    	this->gobelet = gobelet;
     }
 
     void tour();

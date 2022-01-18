@@ -18,11 +18,14 @@ Gobelet::~Gobelet() {
 
 int Gobelet::getValeurG(){
 	this->roll();
-	this->des->roll();
+	this->des->roll(7);
+	cout << this->getValeur() << " et " << this->des->getValeur();
+	this->doublet = bool(this->des->getValeur() == this->getValeur());
+	if (this->doublet) cout << " doublet ";
 	return this->getValeur() + this->des->getValeur(); // ici le gobelet est un dé et on a un dé en plus
 }
 
 bool Gobelet::Double(){
-    return this->des->getValeur() == this->getValeur();
+    return this->doublet;
 }
 

@@ -29,7 +29,7 @@ public:
 
     const Jeu &getJeu() const;
     void setJeu(Jeu *jeu);
-    void roll();
+    void roll(int mod = 1);
 
 };
 

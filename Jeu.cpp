@@ -21,7 +21,7 @@ using namespace std;
 Jeu::Jeu(int nbJoueurs) {
     this->tourdejeu = 1;
     this->nbJoueurs = nbJoueurs;
-    this->gobelet = new Gobelet(6);
+    this->gobelet = Gobelet(6);
     this->joueurs = new Joueur[nbJoueurs];
     this->plateau = Plateau();
     this->nJoueur = 0 ; // TODO random joueur
@@ -85,9 +85,10 @@ void Jeu::tour(){
 	int nbDoublets = 0;
 	while (doublet == true && nbDoublets < 3){
 		doublet = false;
-		int valeur = getGobelet().getValeurG();
 		cout << joueurs[nJoueur] << endl;
-		cout << "Vous avez lance les des et vous avez eu " << valeur <<endl;
+		cout << "Vous avez lance les des et vous avez eu " ;
+		int valeur = gobelet.getValeurG();
+		cout << " soit un total de " << valeur << endl;
 		joueurs[nJoueur].jouer(valeur);
 		cout << endl;
 		afficheMonopoly();
@@ -100,7 +101,7 @@ void Jeu::tour(){
 	if (nbDoublets == 3){
 		joueurs[nJoueur].getPion().goToPrison();
 	}
-	nJoueur = nJoueur + 1 % nbJoueurs;
+	nJoueur = (nJoueur + 1) % nbJoueurs;
 }
 
 void Jeu::jeux(){

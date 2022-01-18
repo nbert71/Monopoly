@@ -69,7 +69,7 @@ void Plateau::affichePlateauMonopoly(Joueur* j,int size, int qui){
 	while (c != NULL && boucle == false){
 		// on affiche la case
 		cout << c;
-		c = c->getSuivante();
+
 
 		// on affiche les joueurs
 		cout << " ";
@@ -86,6 +86,8 @@ void Plateau::affichePlateauMonopoly(Joueur* j,int size, int qui){
 				}
 			}
 		}
+		// on set la case suivante
+		c = c->getSuivante();
 
 		// on affiche la fin selon le cas
 		if (c != NULL) if (c->getNom() == "Depart") boucle = true;

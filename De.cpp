@@ -38,9 +38,9 @@ void De::setJeu(Jeu *j) {
     this->jeu = j;
 }
 
-void De::roll() {
+void De::roll(int mod) {
 	unsigned seed { static_cast<unsigned> (std::chrono::system_clock::now().time_since_epoch().count()) };
-	std::default_random_engine prng(seed);
+	std::default_random_engine prng(seed*mod);
 	std::uniform_int_distribution<int> dist(1, this->nbFaces);
 	this->valeur = dist(prng);
 }

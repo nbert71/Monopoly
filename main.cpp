@@ -38,7 +38,8 @@ int main()
     */
 
 	Jeu j = Jeu();
-	j.init(1,"a","x");
+	//j.init(1,"a","x");
+	j.init();
 	j.jeux();
     return 0;
 }

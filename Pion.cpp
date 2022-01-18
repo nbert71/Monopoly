@@ -36,7 +36,7 @@ void Pion::setNom(const string &nom) {
 }
 
 Case* Pion::deplacer(int n) {
-	for (int i = 0 ; i <= n; i++){
+	for (int i = 0 ; i < n; i++){
 		this->position = position->getSuivante();
 		if (position->getNom() == "Depart") joueur->crediter(200);
 	}
