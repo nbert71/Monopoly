@@ -25,7 +25,7 @@ public:
     void lierCases(Case* c);
 
     void affichePlateau();
-    void affichePlateauMonopoly(Joueur* j, int size);
+    void affichePlateauMonopoly(Joueur* j, int size, int qui);
 };
 
 

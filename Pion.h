@@ -30,9 +30,9 @@ public:
     const string &getNom() const;
     void setNom(const string &nom);
 
-    void deplacer(int n);
+    Case* deplacer(int n);
 
-    void goToPrison();
+    Case* goToPrison();
 
     void affiche(){
 		cout << this->nom;

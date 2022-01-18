@@ -40,22 +40,25 @@ public:
     void setJeu(Jeu* jeu){this->jeu = jeu;}
     void setPrison(bool prison){ this->prison = prison;}
 
-    void jouer();
+    void jouer(int nbCases);
     void crediter(const int montant);
     void debiter(const int montant);
 
-    void deplacer(int n){
-    	pion.deplacer(n);
-    }
 
     void afficheSolde();
 
     void affiche(){
-    	cout << nom;
+    	cout << nom << ", votre solde est " << solde;
     }
     void affichePion(){
     	cout << &pion;
     }
+
+    friend ostream& operator<< (ostream& stream, Joueur j){
+    	j.affiche();
+    	return stream;
+    }
+
 };
 
 

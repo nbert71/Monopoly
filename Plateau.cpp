@@ -45,15 +45,21 @@ void Plateau::affichePlateau(){
 	cout << endl;
 }
 
-void Plateau::affichePlateauMonopoly(Joueur* j,int size){
+void Plateau::affichePlateauMonopoly(Joueur* j,int size, int qui){
 	cout << "| ";
 	cout << cases;
 	cout << " ";
 	for(int i=0; i < size;i++){
 		if (j[i].getPion().getPosition() == cases){
-			cout << " (";
-			cout << j[i].getPion();
-			cout << ") ";
+			if (i == qui){
+				cout << " [";
+				cout << j[i].getPion();
+				cout << "] ";
+			}else{
+				cout << " (";
+				cout << j[i].getPion();
+				cout << ") ";
+			}
 		}
 	}
 	cout << " | ";
@@ -69,9 +75,15 @@ void Plateau::affichePlateauMonopoly(Joueur* j,int size){
 		cout << " ";
 		for(int i=0; i < size;i++){
 			if (j[i].getPion().getPosition() == c){
-				cout << " (";
-				cout << j[i].getPion();
-				cout << ") ";
+				if (i == qui){
+					cout << " [";
+					cout << j[i].getPion();
+					cout << "] ";
+				}else{
+					cout << " (";
+					cout << j[i].getPion();
+					cout << ") ";
+				}
 			}
 		}
 

@@ -23,6 +23,6 @@ int Gobelet::getValeurG(){
 }
 
 bool Gobelet::Double(){
-    return true;
+    return this->des->getValeur() == this->getValeur();
 }
 

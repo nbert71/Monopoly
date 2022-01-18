@@ -38,9 +38,7 @@ int main()
     */
 
 	Jeu j = Jeu();
-	j.init();
-	j.afficheMonopoly();
-	j.getJoueurs()->deplacer(100);
-	j.afficheMonopoly();
+	j.init(1,"a","x");
+	j.jeux();
     return 0;
 }

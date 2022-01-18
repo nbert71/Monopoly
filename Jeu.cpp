@@ -24,22 +24,35 @@ Jeu::Jeu(int nbJoueurs) {
     this->gobelet = new Gobelet(6);
     this->joueurs = new Joueur[nbJoueurs];
     this->plateau = Plateau();
+    this->nJoueur = 0 ; // TODO random joueur
 
 }
 
-void Jeu::init(){
+void Jeu::init(int n,string nom_, string c){
 	// on load le plateau
 	loadMonopolyPlateau();
-	cout << "Saisissez le nombre de joueurs : ";
-	cin >> nbJoueurs;
+	if (n == 0){
+		cout << "Saisissez le nombre de joueurs : ";
+		cin >> nbJoueurs;
+	}else{
+		nbJoueurs = n;
+	}
 	this->joueurs = new Joueur[nbJoueurs];
 	for (int i=0; i < nbJoueurs; i++){ // TODO faire en sorte d'avoir au moins 2 joueurs
 		string nom;
 		string symbole;
-		cout << "Saisissez le nom du joueur : ";
-		cin >> nom;
-		cout << "Saisissez le symbole du pion (+,x,=,%,~,@,µ) : "; // TODO faire en sorte qu'on puisse avoir que ça et pas deux fois
-		cin >> symbole;
+		if(nom_ == ""){
+			cout << "Saisissez le nom du joueur : ";
+			cin >> nom;
+		}else{
+			nom = nom_;
+		}
+		if(c == ""){
+			cout << "Saisissez le symbole du pion (+,x,=,%,~,@,µ) : "; // TODO faire en sorte qu'on puisse avoir que ça et pas deux fois
+			cin >> symbole;
+		}else{
+			symbole = c;
+		}
 
 		Pion aa = Pion(symbole);
 		Joueur a = Joueur(nom,aa);
@@ -67,6 +80,34 @@ void Jeu::setPlateau(const Plateau &p) {
     Jeu::plateau = p;
 }
 
+void Jeu::tour(){
+	bool doublet = true;
+	int nbDoublets = 0;
+	while (doublet == true && nbDoublets < 3){
+		doublet = false;
+		int valeur = getGobelet().getValeurG();
+		cout << joueurs[nJoueur] << endl;
+		cout << "Vous avez lance les des et vous avez eu " << valeur <<endl;
+		joueurs[nJoueur].jouer(valeur);
+		cout << endl;
+		afficheMonopoly();
+		if (getGobelet().Double()){
+			doublet = true;
+			nbDoublets += 1;
+		}
+		cout << endl << endl;
+	}
+	if (nbDoublets == 3){
+		joueurs[nJoueur].getPion().goToPrison();
+	}
+	nJoueur = nJoueur + 1 % nbJoueurs;
+}
+
+void Jeu::jeux(){
+	for (int i=0; i < 10; i++){ // while il reste un seul joueur
+		tour();
+	}
+}
 
 void Jeu::loadMonopolyPlateau(){
 	// depart déjà setup
