@@ -11,6 +11,7 @@
 class Propriete : public Case { // @suppress("Class has a virtual method and non-virtual destructor")
 private:
     int loyer;
+protected:
     int prixAchat;
 
 public:
@@ -25,6 +26,10 @@ public:
     void setPrixAchat(int prixAchat);
 
     void arreterSur();
+
+    void affiche(){
+		cout << this->nom << " " << prixAchat << "$" ;
+	}
 };
 
 

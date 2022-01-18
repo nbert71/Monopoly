@@ -31,6 +31,9 @@ int main()
     list[1].getPion()->setPosition(je.getPlateau().getCases());
     je.setJoueurs(list);
     je.afficheMonopoly();
+    cout<<endl;
+    list[0].getPion()->deplacer(2);
+    je.afficheMonopoly();
 
     return 0;
 }

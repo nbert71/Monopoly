@@ -48,8 +48,8 @@ void Plateau::affichePlateau(){
 void Plateau::affichePlateauMonopoly(Joueur* j,int size){
 	cout << "| ";
 	this->cases->affiche();
-	cout << ", ";
-	for(int i; i < size;i++){
+	cout << " ";
+	for(int i=0; i < size;i++){
 		if (j[i].getPion()->getPosition() == cases){
 			cout << " (";
 			j[i].getPion()->affiche();
@@ -59,16 +59,16 @@ void Plateau::affichePlateauMonopoly(Joueur* j,int size){
 	cout << " | ";
 	Case* c = this->cases->getSuivante();
 	bool boucle = false;
-	int ligne = 0;
+	int ligne = 1;
 	while (c != NULL && boucle == false){
 		// on affiche la case
 		c->affiche();
 		c = c->getSuivante();
 
 		// on affiche les joueurs
-		cout << ", ";
-		for(int i; i < size;i++){
-			if (j[i].getPion()->getPosition() == cases){
+		cout << " ";
+		for(int i=0; i < size;i++){
+			if (j[i].getPion()->getPosition() == c){
 				cout << " (";
 				j[i].getPion()->affiche();
 				cout << ") ";

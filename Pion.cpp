@@ -36,5 +36,7 @@ void Pion::setNom(const string &nom) {
 }
 
 void Pion::deplacer(int n) {
-
+	for (int i = 0 ; i < n; i++){
+		position = position->getSuivante();
+	}
 }
