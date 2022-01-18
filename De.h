@@ -14,8 +14,8 @@ class Jeu;
 class De {
 private:
     Jeu* jeu;
-    int nbFaces{};
-    int valeur{};
+    int nbFaces;
+    int valeur;
 
 
 

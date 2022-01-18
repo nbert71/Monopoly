@@ -43,5 +43,4 @@ void De::roll() {
 	std::default_random_engine prng(seed);
 	std::uniform_int_distribution<int> dist(1, this->nbFaces);
 	this->valeur = dist(prng);
-
 }

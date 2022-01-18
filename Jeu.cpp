@@ -33,7 +33,7 @@ void Jeu::init(){
 	cout << "Saisissez le nombre de joueurs : ";
 	cin >> nbJoueurs;
 	this->joueurs = new Joueur[nbJoueurs];
-	for (int i=0; i < nbJoueurs; i++){ // faire en sorte d'avoir au moins 2 joueurs
+	for (int i=0; i < nbJoueurs; i++){ // TODO faire en sorte d'avoir au moins 2 joueurs
 		string nom;
 		string symbole;
 		cout << "Saisissez le nom du joueur : ";
@@ -44,11 +44,13 @@ void Jeu::init(){
 		Pion aa = Pion(symbole);
 		Joueur a = Joueur(nom,aa);
 
-		aa.setPosition(plateau.getCases()); // on set la position initiale à la première case du plateau aka le Depart
-		aa.setJoueur(a);
-		a.setPion(aa);
-
 		joueurs[i] = a;
+
+		aa.setPosition(plateau.getCases()); // on set la position initiale à la première case du plateau aka le Depart
+		aa.setJoueur(joueurs[i]);
+		joueurs[i].setPion(aa);
+
+
 	}
 }
 

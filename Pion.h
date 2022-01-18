@@ -17,7 +17,7 @@ class Pion {
 private:
     Joueur* joueur;
     Case* position;
-    string nom; // charactère du pion sur le plateau
+    string nom; // character du pion sur le plateau
 public:
     Pion(string nom="");
 

@@ -40,6 +40,7 @@ int main()
 	Jeu j = Jeu();
 	j.init();
 	j.afficheMonopoly();
-
+	j.getJoueurs()->deplacer(100);
+	j.afficheMonopoly();
     return 0;
 }

@@ -14,6 +14,8 @@ Joueur::Joueur(string nom, Pion p, Jeu* jeu, int solde){
 	this->pion = p;
 	this->solde = solde;
 	this->jeu = jeu;
+	this->prison = false;
+	// TODO attribut tour pour savoir si c'est notre tour
 }
 
 const string &Joueur::getNom() const {
@@ -44,11 +46,11 @@ void Joueur::jouer() {
 
 }
 
-void Joueur::crediter(const int montant) {
+void Joueur::crediter(int montant) {
     this->solde += montant;
 }
 
-void Joueur::debiter(const int montant) {
+void Joueur::debiter(int montant) {
     this->solde -= montant;
 }
 

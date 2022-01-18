@@ -18,6 +18,7 @@ private:
     string nom;
     Pion pion;
     Jeu* jeu;
+    bool prison; // si on vas en prison
 
 protected:
     int solde;
@@ -31,16 +32,21 @@ public:
     Pion getPion();
     int getSolde() const;
     const Jeu &getJeu() const{return *this->jeu;}
+    bool getPrison(){return prison;}
 
     void setNom(const string &nom);
     void setPion(Pion& pion);
     void setSolde(int solde);
     void setJeu(Jeu* jeu){this->jeu = jeu;}
+    void setPrison(){ this->prison = prison;}
 
     void jouer();
     void crediter(const int montant);
     void debiter(const int montant);
 
+    void deplacer(int n){
+    	pion.deplacer(n);
+    }
 
     void afficheSolde();
 

@@ -33,7 +33,7 @@ public:
 
     void init();
 
-    const Gobelet &getGobelet() const{
+    Gobelet getGobelet(){
     	return *this->gobelet;
     }
     void setGobelet(Gobelet& gobelet){
@@ -42,6 +42,7 @@ public:
 
     Joueur* getJoueurs(){return this->joueurs;}
     void setJoueurs(Joueur* joueurs){this->joueurs = joueurs;}
+
 
     void loadMonopolyPlateau();
 
