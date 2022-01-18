@@ -18,7 +18,7 @@ public:
 
     const string &getCouleur() const;
     void setCouleur(const string &couleur);
-    void arreterSur();
+    void arreterSur(Joueur* j);
     void affiche(){
     	cout << couleur[0] << " " << nom << " " << prixAchat << "$";
     }

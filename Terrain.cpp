@@ -22,8 +22,17 @@ void Terrain::setCouleur(const string &couleur) {
 }
 
 
-void Terrain::arreterSur() {
-    //Case::arreterSur();
+void Terrain::arreterSur(Joueur* j) {
+	bool achat = true;
+	if (proprietaire == NULL && achat == true){
+		j->debiter(prixAchat);
+		proprietaire = j;
+	}else if (proprietaire != NULL){
+		j->debiter(loyer);
+		proprietaire->crediter(loyer);
+	}else{
+		// TODO enchères
+	}
 }
 
 

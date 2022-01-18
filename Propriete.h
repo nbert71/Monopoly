@@ -10,9 +10,8 @@
 #include "Joueur.h"
 
 class Propriete : public Case { // @suppress("Class has a virtual method and non-virtual destructor")
-private:
-    int loyer;
 protected:
+	int loyer;
     int prixAchat;
     Joueur* proprietaire;
 
@@ -20,8 +19,8 @@ public:
     Propriete(string nom, int loyer,int prixAchat);
     virtual ~Propriete();
 
-    Joueur* getProprietaire(){return proprietaire;};
-    void setProprietaire(Joueur* j){proprietaire = j;};
+    Joueur* getProprietaire(){return proprietaire;}
+    void setProprietaire(Joueur* j){proprietaire = j;}
 
     int getLoyer() const;
     void setLoyer(int loyer);
