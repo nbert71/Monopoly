@@ -31,6 +31,7 @@ public:
     Plateau &getPlateau(){return plateau;}
     void setPlateau(const Plateau &plateau);
 
+    void init();
 
     const Gobelet &getGobelet() const{
     	return *this->gobelet;

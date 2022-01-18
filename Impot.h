@@ -24,7 +24,7 @@ public:
 	void setLoyer(int loyer);
 
 	void affiche(){
-		cout << this->nom << " " << loyer ;
+		cout << nom << " " << loyer << "$";
 	}
 };
 

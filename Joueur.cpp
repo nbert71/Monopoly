@@ -6,7 +6,10 @@
 #include "Joueur.h"
 #include "Jeu.h"
 
-Joueur::Joueur(string nom, Jeu* jeu, Pion* p, int solde){
+Joueur::Joueur(){
+}
+
+Joueur::Joueur(string nom, Pion p, Jeu* jeu, int solde){
 	this->nom = nom;
 	this->pion = p;
 	this->solde = solde;
@@ -17,7 +20,7 @@ const string &Joueur::getNom() const {
     return nom;
 }
 
-Pion* Joueur::getPion() {
+Pion Joueur::getPion() {
     return pion;
 }
 
@@ -30,7 +33,7 @@ void Joueur::setNom(const string &nom) {
 }
 
 void Joueur::setPion(Pion& pion) {
-	Joueur::pion = &pion;
+	Joueur::pion = pion;
 }
 
 void Joueur::setSolde(int solde) {

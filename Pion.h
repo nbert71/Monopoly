@@ -19,7 +19,7 @@ private:
     Case* position;
     string nom; // charactère du pion sur le plateau
 public:
-    Pion(string nom);
+    Pion(string nom="");
 
     Joueur* getJoueur();
     void setJoueur(Joueur& joueur);
@@ -33,7 +33,12 @@ public:
     void deplacer(int n);
 
     void affiche(){
-    	cout << this->nom;
+		cout << this->nom;
+    }
+
+    friend ostream& operator<< (ostream& stream, Pion p){
+    	p.affiche();
+    	return stream;
     }
 };
 

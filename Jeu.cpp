@@ -27,6 +27,31 @@ Jeu::Jeu(int nbJoueurs) {
 
 }
 
+void Jeu::init(){
+	// on load le plateau
+	loadMonopolyPlateau();
+	cout << "Saisissez le nombre de joueurs : ";
+	cin >> nbJoueurs;
+	this->joueurs = new Joueur[nbJoueurs];
+	for (int i=0; i < nbJoueurs; i++){ // faire en sorte d'avoir au moins 2 joueurs
+		string nom;
+		string symbole;
+		cout << "Saisissez le nom du joueur : ";
+		cin >> nom;
+		cout << "Saisissez le symbole du pion (+,x,=,%,~,@,µ) : "; // TODO faire en sorte qu'on puisse avoir que ça et pas deux fois
+		cin >> symbole;
+
+		Pion aa = Pion(symbole);
+		Joueur a = Joueur(nom,aa);
+
+		aa.setPosition(plateau.getCases()); // on set la position initiale à la première case du plateau aka le Depart
+		aa.setJoueur(a);
+		a.setPion(aa);
+
+		joueurs[i] = a;
+	}
+}
+
 int Jeu::getTourdejeu() const {
     //cout << "Tour de jeu : " << this->tourdejeu << endl;
     return tourdejeu;

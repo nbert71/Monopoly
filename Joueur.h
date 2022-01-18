@@ -16,18 +16,19 @@ class Joueur {
 
 private:
     string nom;
-    Pion* pion;
+    Pion pion;
     Jeu* jeu;
 
 protected:
     int solde;
 
 public:
-    Joueur(string nom = "", Jeu* jeu = NULL,Pion* pion= NULL, int solde = 1500);
+    Joueur();
+    Joueur(string nom ,Pion pion, Jeu* jeu = NULL, int solde = 1500);
 
     void operation();
     const string &getNom() const;
-    Pion* getPion();
+    Pion getPion();
     int getSolde() const;
     const Jeu &getJeu() const{return *this->jeu;}
 
@@ -42,6 +43,13 @@ public:
 
 
     void afficheSolde();
+
+    void affiche(){
+    	cout << nom;
+    }
+    void affichePion(){
+    	cout << &pion;
+    }
 };
 
 

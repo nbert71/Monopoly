@@ -42,6 +42,10 @@ public:
     virtual void affiche(){
     	cout << this->nom ;
     }
+    friend ostream& operator<< (ostream& stream,Case* c){
+    	c->affiche();
+    	return stream;
+    }
 
     Case* getSuivante(){
 		return this->suivante;

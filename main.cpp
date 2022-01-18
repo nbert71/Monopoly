@@ -12,6 +12,7 @@ using namespace std;
 
 int main()
 {
+	/*
 	Joueur a = Joueur("A");
 	Pion aa = Pion("X");
 	aa.setJoueur(a);
@@ -34,6 +35,11 @@ int main()
     cout<<endl;
     list[0].getPion()->deplacer(2);
     je.afficheMonopoly();
+    */
+
+	Jeu j = Jeu();
+	j.init();
+	j.afficheMonopoly();
 
     return 0;
 }
