@@ -32,6 +32,8 @@ public:
 
     void deplacer(int n);
 
+    void goToPrison();
+
     void affiche(){
 		cout << this->nom;
     }

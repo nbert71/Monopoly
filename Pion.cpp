@@ -41,3 +41,10 @@ void Pion::deplacer(int n) {
 		if (position->getNom() == "Depart") joueur->crediter(200);
 	}
 }
+
+void Pion::goToPrison(){
+	joueur->setPrison(true);
+	while (position->getNom() != "Prison"){
+		this->position = position->getSuivante();
+	}
+}

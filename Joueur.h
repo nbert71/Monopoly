@@ -38,7 +38,7 @@ public:
     void setPion(Pion& pion);
     void setSolde(int solde);
     void setJeu(Jeu* jeu){this->jeu = jeu;}
-    void setPrison(){ this->prison = prison;}
+    void setPrison(bool prison){ this->prison = prison;}
 
     void jouer();
     void crediter(const int montant);
