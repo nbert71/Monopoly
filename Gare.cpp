@@ -4,8 +4,8 @@
 
 #include "Gare.h"
 
-Gare::Gare(string nom,int loyer,int prixAchat):
-Propriete(nom,loyer,prixAchat){
+Gare::Gare(string nom,int prixAchat):
+Propriete(nom,50,prixAchat){ // il faudra calculer le loyer mais par défaut c'est 50
 
 }
 

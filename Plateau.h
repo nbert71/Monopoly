@@ -8,7 +8,7 @@
 
 
 #include "Case.h"
-#include<vector>
+#include "Joueur.h"
 
 class Plateau {
 private:
@@ -19,11 +19,13 @@ public:
     Plateau();
     ~Plateau();
 
+    Case* getCases(){return cases;}
+
     void creerCases();
     void lierCases(Case* c);
 
     void affichePlateau();
-
+    void affichePlateauMonopoly(Joueur* j, int size);
 };
 
 

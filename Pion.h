@@ -6,29 +6,35 @@
 #define MONOPOLY_PION_H
 
 
-#include "Joueur.h"
+
 #include "Case.h"
 
 
 using namespace std;
 
-
+class Joueur;
 class Pion {
 private:
-    Joueur joueur;
-    Case position;
-    string nom;
+    Joueur* joueur;
+    Case* position;
+    string nom; // charactère du pion sur le plateau
 public:
-    const Joueur &getJoueur() const;
-    void setJoueur(const Joueur &joueur);
+    Pion(string nom);
 
-    const Case &getPosition() const;
-    void setPosition(const Case &position);
+    Joueur* getJoueur();
+    void setJoueur(Joueur& joueur);
+
+    Case* getPosition();
+    void setPosition( Case* position);
 
     const string &getNom() const;
     void setNom(const string &nom);
 
     void deplacer(int n);
+
+    void affiche(){
+    	cout << this->nom;
+    }
 };
 
 

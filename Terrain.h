@@ -18,7 +18,10 @@ public:
 
     const string &getCouleur() const;
     void setCouleur(const string &couleur);
-//    void arreterSur();
+    void arreterSur();
+    void affiche(){
+    	cout << this->couleur[0] << ", " <<this->nom ;;
+    }
 };
 
 

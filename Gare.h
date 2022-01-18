@@ -9,9 +9,10 @@
 #include "Propriete.h"
 
 class Gare : public Propriete{
-	Gare(string nom="",int loyer=0,int prixAchat=0);
+public:
+	Gare(string nom="",int prixAchat=200);
 	~Gare();
-	void arreterSur();
+	void arreterSur(); // loyer à calculer
 };
 
 

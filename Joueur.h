@@ -6,13 +6,12 @@
 #define MONOPOLY_JOUEUR_H
 
 #include <iostream>
-
+#include "Pion.h"
 
 
 using namespace std;
 
 class Jeu;
-class Pion;
 class Joueur {
 
 private:
@@ -28,12 +27,12 @@ public:
 
     void operation();
     const string &getNom() const;
-    const Pion &getPion() const;
+    Pion* getPion();
     int getSolde() const;
     const Jeu &getJeu() const{return *this->jeu;}
 
     void setNom(const string &nom);
-    void setPion(Pion* pion);
+    void setPion(Pion& pion);
     void setSolde(int solde);
     void setJeu(Jeu* jeu){this->jeu = jeu;}
 

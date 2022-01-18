@@ -12,7 +12,7 @@ using namespace std;
 
 class Communaute : public Case { // @suppress("Class has a virtual method and non-virtual destructor")
 public:
-	Communaute():Case("Communaute"){};
+	Communaute():Case("Caisse de communauté"){};
 	~Communaute();
     void arreterSur();
 };

@@ -17,6 +17,7 @@ class Jeu {
 
 private:
     int tourdejeu;
+    int nbJoueurs;
     Plateau plateau;
     Gobelet* gobelet;
     Joueur* joueurs;
@@ -27,7 +28,7 @@ public:
     int getTourdejeu() const;
     void setTourdejeu(int tourdejeu);
 
-    const Plateau &getPlateau() const;
+    Plateau &getPlateau(){return plateau;}
     void setPlateau(const Plateau &plateau);
 
 
@@ -38,9 +39,14 @@ public:
     	this->gobelet = &gobelet;
     }
 
-    const Joueur* getJoueurs(){return this->joueurs;}
+    Joueur* getJoueurs(){return this->joueurs;}
     void setJoueurs(Joueur* joueurs){this->joueurs = joueurs;}
 
+    void loadMonopolyPlateau();
+
+    void afficheMonopoly(){
+    	plateau.affichePlateauMonopoly(joueurs,nbJoueurs);
+    }
 };
 
 

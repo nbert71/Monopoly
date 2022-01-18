@@ -3,20 +3,27 @@
 //
 
 #include "Pion.h"
+#include "Joueur.h"
 
-const Joueur &Pion::getJoueur() const {
+Pion::Pion(string nom){
+	this->nom = nom;
+	this->position = NULL;
+	this->joueur = NULL;
+}
+
+Joueur* Pion::getJoueur(){
     return joueur;
 }
 
-void Pion::setJoueur(const Joueur &joueur) {
-    Pion::joueur = joueur;
+void Pion::setJoueur(Joueur& joueur) {
+    Pion::joueur = &joueur;
 }
 
-const Case &Pion::getPosition() const {
+Case* Pion::getPosition() {
     return position;
 }
 
-void Pion::setPosition(const Case &position) {
+void Pion::setPosition( Case* position) {
     Pion::position = position;
 }
 

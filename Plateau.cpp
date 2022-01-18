@@ -35,11 +35,58 @@ void Plateau::affichePlateau(){
 	this->cases->affiche();
 	cout << " ,";
 	Case* c = this->cases->getSuivante();
-	while (c != NULL){
+	bool boucle = false;
+	while (c != NULL && boucle == false){
 		c->affiche();
 		cout << " ,";
+		if (c->getNom() == "Depart") boucle = true;
 		c = c->getSuivante();
 	}
 	cout << endl;
 }
+
+void Plateau::affichePlateauMonopoly(Joueur* j,int size){
+	cout << "| ";
+	this->cases->affiche();
+	cout << ", ";
+	for(int i; i < size;i++){
+		if (j[i].getPion()->getPosition() == cases){
+			j[i].getPion()->affiche();
+			cout << " / ";
+		}
+	}
+	cout << " | ";
+	Case* c = this->cases->getSuivante();
+	bool boucle = false;
+	int ligne = 0;
+	while (c != NULL && boucle == false){
+		// on affiche la case
+		c->affiche();
+		c = c->getSuivante();
+
+		// on affiche les joueurs
+		cout << ", ";
+		for(int i; i < size;i++){
+			if (j[i].getPion()->getPosition() == cases){
+				j[i].getPion()->affiche();
+				cout << " / ";
+			}
+		}
+
+		// on affiche la fin selon le cas
+		if (c != NULL) if (c->getNom() == "Depart") boucle = true;
+		ligne++;
+		if (ligne == 10){
+			cout << "||" << endl;
+			cout << "--------------------------------------------------------------------------------------------------------------"<< endl << "| ";
+			ligne = 0;
+		}else if (boucle == true){
+			cout << " ||";
+		}else{
+			cout << " | ";
+		}
+	}
+	cout << endl;
+}
+
 
