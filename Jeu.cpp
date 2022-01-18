@@ -68,48 +68,48 @@ void Jeu::setPlateau(const Plateau &p) {
 
 void Jeu::loadMonopolyPlateau(){
 	// depart déjà setup
-	plateau.lierCases(new Terrain("Boulevard de Belleville","marron",60,60));
+	plateau.lierCases(new Terrain("Boulevard de Belleville","",60,60));
 	plateau.lierCases(new Communaute());
-	plateau.lierCases(new Terrain("Rue Lecourbe","marron",60,60));
+	plateau.lierCases(new Terrain("Rue Lecourbe","",60,60));
 	plateau.lierCases(new Impot("Impot sur le Revenu",200));
-	plateau.lierCases(new Gare("Gare Montparnasse"));
-	plateau.lierCases(new Terrain("Rue de vaugirard","ciel", 100, 100));
+	plateau.lierCases(new Gare("\033[04mGare Montparnasse\033[0m"));
+	plateau.lierCases(new Terrain("Rue de vaugirard","\033[36m", 100, 100));
 	plateau.lierCases(new Chance());
-	plateau.lierCases(new Terrain("Rue de Courcelles","ciel",100,100));
-	plateau.lierCases(new Terrain("Avenue de la république","ciel",120,120));
+	plateau.lierCases(new Terrain("Rue de Courcelles","\033[36m",100,100));
+	plateau.lierCases(new Terrain("Avenue de la Republique","\033[36m",120,120));
 
 	plateau.lierCases(new Prison());
-	plateau.lierCases(new Terrain("Boulevard de la viliette", "mauve", 140,140));
-	plateau.lierCases(new Compagnie("compagnie de distribution d'electricité",150));
-	plateau.lierCases(new Terrain("Avenue de Neuilly","mauve", 140, 140));
-	plateau.lierCases(new Terrain("Rue de Paradis","mauve",160,160));
-	plateau.lierCases(new Gare("Gare de Lyon"));
-	plateau.lierCases(new Terrain("Avenue Mozart","orange",180,180));
+	plateau.lierCases(new Terrain("Boulevard de la viliette", "\033[35m", 140,140));
+	plateau.lierCases(new Compagnie("Compagnie de distribution d'electricite",150));
+	plateau.lierCases(new Terrain("Avenue de Neuilly","\033[35m", 140, 140));
+	plateau.lierCases(new Terrain("Rue de Paradis","\033[35m",160,160));
+	plateau.lierCases(new Gare("\033[04mGare de Lyon\033[0m"));
+	plateau.lierCases(new Terrain("Avenue Mozart","",180,180));
 	plateau.lierCases(new Communaute());
-	plateau.lierCases(new Terrain("Boulevard Saint-Michel","orange",180,180));
-	plateau.lierCases(new Terrain("Place Pigalle","orange",200,200));
+	plateau.lierCases(new Terrain("Boulevard Saint-Michel","",180,180));
+	plateau.lierCases(new Terrain("Place Pigalle","",200,200));
 
 	plateau.lierCases(new ParcGratuit());
-	plateau.lierCases(new Terrain("Avenue Matignon","rouge",220,220));
+	plateau.lierCases(new Terrain("Avenue Matignon","\033[31m",220,220));
 	plateau.lierCases(new Chance());
-	plateau.lierCases(new Terrain("Boulevard Malesherbes","rouge",220,220));
-	plateau.lierCases(new Terrain("Avenue Henri-Martin","rouge",240,240));
-	plateau.lierCases(new Gare("Gare du Nord"));
-	plateau.lierCases(new Terrain("Faubourg Saint-Honoré","jaune",260,260));
-	plateau.lierCases(new Terrain("Place de la bourse","jaune", 260,260));
+	plateau.lierCases(new Terrain("Boulevard Malesherbes","\033[31m",220,220));
+	plateau.lierCases(new Terrain("Avenue Henri-Martin","\033[31m",240,240));
+	plateau.lierCases(new Gare("\033[04mGare du Nord\033[0m"));
+	plateau.lierCases(new Terrain("Faubourg Saint-Honore","\033[33m",260,260));
+	plateau.lierCases(new Terrain("Place de la bourse","\033[33m", 260,260));
 	plateau.lierCases(new Compagnie("Compagnie de distribution des eaux",150));
-	plateau.lierCases(new Terrain("Rue de la Fayette","jaune",280,280));
+	plateau.lierCases(new Terrain("Rue de la Fayette","\033[33m",280,280));
 
 	plateau.lierCases(new AllezEnPrison());
-	plateau.lierCases(new Terrain("Avenue de Breteuil","vert",300,300));
-	plateau.lierCases(new Terrain("Avenue Foch","vert",300,300));
+	plateau.lierCases(new Terrain("Avenue de Breteuil","\033[32m",300,300));
+	plateau.lierCases(new Terrain("Avenue Foch","\033[32m",300,300));
 	plateau.lierCases(new Communaute());
-	plateau.lierCases(new Terrain("Boulevard des Capucines","vert", 320, 320));
-	plateau.lierCases(new Gare("Gare de Saint-Lazare"));
+	plateau.lierCases(new Terrain("Boulevard des Capucines","\033[32m", 320, 320));
+	plateau.lierCases(new Gare("\033[04mGare de Saint-Lazare\033[0m"));
 	plateau.lierCases(new Chance());
-	plateau.lierCases(new Terrain("Avenue des Champs-Elyees","bleu",350,350));
+	plateau.lierCases(new Terrain("Avenue des Champs-Elysees","\033[34m",350,350));
 	plateau.lierCases(new Impot("Taxe de Luxe", 100));
-	plateau.lierCases(new Terrain("Rue de la paix","bleu",400,400));
+	plateau.lierCases(new Terrain("Rue de la paix","\033[34m",400,400));
 
 	// on boucle le plateau :
 	plateau.lierCases(plateau.getCases());

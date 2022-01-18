@@ -20,7 +20,7 @@ public:
     void setCouleur(const string &couleur);
     void arreterSur();
     void affiche(){
-    	cout << couleur[0] << " " << nom << " " << prixAchat << "$";
+    	cout << couleur << nom << " " << prixAchat << "$" << "\033[0m";
     }
 };
 
