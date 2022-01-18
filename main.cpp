@@ -40,6 +40,10 @@ int main()
 	Jeu j = Jeu();
 	j.init();
 	j.afficheMonopoly();
+    cout << j.getJoueurs()->getSolde() << endl;
+    j.getJoueurs()->crediter(100);
+    cout << j.getJoueurs()->getSolde() << endl;
+
 
     return 0;
 }

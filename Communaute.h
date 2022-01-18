@@ -6,15 +6,16 @@
 #define MONOPOLY_COMMUNAUTE_H
 
 #include "Case.h"
+#include"Joueur.h"
 
 #include <iostream>
 using namespace std;
 
 class Communaute : public Case { // @suppress("Class has a virtual method and non-virtual destructor")
 public:
-	Communaute():Case("Caisse de communauté"){};
+	Communaute():Case("Caisse de communaute"){};
 	~Communaute();
-    void arreterSur();
+    void arreterSur(Joueur* j);
 };
 
 

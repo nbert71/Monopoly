@@ -6,7 +6,7 @@
 #define MONOPOLY_CHANCE_H
 
 #include "Case.h"
-
+#include "Joueur.h"
 #include <iostream>
 using namespace std;
 
@@ -14,7 +14,7 @@ class Chance : public Case{ // @suppress("Class has a virtual method and non-vir
 public:
 	Chance():Case("Prison"){};
 	~Chance();
-    void arreterSur();
+    void arreterSur(Joueur* j);
 };
 
 
