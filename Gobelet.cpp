@@ -16,9 +16,13 @@ Gobelet::~Gobelet() {
 
 }
 
-int Gobelet::getValeur(){
+int Gobelet::getValeurG(){
 	this->roll();
 	this->des->roll();
 	return this->getValeur() + this->des->getValeur(); // ici le gobelet est un dé et on a un dé en plus
+}
+
+bool Gobelet::Double(){
+    return true;
 }
 

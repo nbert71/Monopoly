@@ -10,15 +10,15 @@
 
 #include "De.h"
 
-class Gobelet: public De { // ici le gobelet est un dé et on a un dé en plus
+class Gobelet: public De { // ici le gobelet est un dï¿½ et on a un dï¿½ en plus
 private:
 	De* des;
 public:
 	Gobelet(int n);
 	virtual ~Gobelet();
 
-	int getValeur();
-	int Double();
+	int getValeurG();
+	bool Double();
 };
 
 #endif /* GOBELET_H_ */
