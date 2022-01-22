@@ -84,6 +84,12 @@ void Jeu::tour(){
 	bool doublet = true;
 	int nbDoublets = 0;
 	while (doublet == true && nbDoublets < 3){
+		try{
+			system("pause"); // permet d'attendre une entrée pour lancer les dés, mais ne marche que sous windows
+		}
+		catch(...){ // catch toutes les erreurs
+			cerr << "Vous n'etes pas sous windows, les des se lancent tout seuls !";
+		}
 		doublet = false;
 		cout << joueurs[nJoueur] << endl;
 		cout << "Vous avez lance les des et vous avez eu " ;
