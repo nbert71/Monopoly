@@ -9,6 +9,8 @@ using namespace std;
 #include "Depart.h"
 #include "Terrain.h"
 #include "Joueur.h"
+#include "Possessions.h"
+#include "Gare.h"
 
 int main()
 {
@@ -37,9 +39,31 @@ int main()
     je.afficheMonopoly();
     */
 
+
 	Jeu j = Jeu();
 	//j.init(1,"a","x");
 	j.init();
 	j.jeux();
+
+	/*
+	Gare * g =new Gare("Gare du Nord");
+	Terrain* t = new Terrain("test");
+	Joueur j = Joueur();
+	j.getPossessions().affichePossessions();
+	cout << j.nbPossessions() << endl <<endl;
+	j.addPossession(g);
+	j.getPossessions().affichePossessions();
+	cout << j.nbPossessions() << endl<<endl;
+	j.addPossession(t);
+	j.getPossessions().affichePossessions();
+	cout << j.nbPossessions() << endl<<endl;
+	j.removePossession(g);
+	j.getPossessions().affichePossessions();
+	cout << j.nbPossessions() << endl<<endl;
+	j.removePossession(t);
+	j.getPossessions().affichePossessions();
+	cout << j.nbPossessions() << endl<<endl;
+	*/
+
     return 0;
 }

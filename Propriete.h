@@ -9,6 +9,7 @@
 #include "Case.h"
 #include "Joueur.h"
 
+
 class Propriete : public Case { // @suppress("Class has a virtual method and non-virtual destructor")
 protected:
 	int loyer;

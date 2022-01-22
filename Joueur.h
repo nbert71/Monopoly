@@ -7,11 +7,14 @@
 
 #include <iostream>
 #include "Pion.h"
+#include "Possessions.h"
 
 
 using namespace std;
 
+class Propriete;
 class Jeu;
+
 class Joueur {
 
 private:
@@ -19,6 +22,7 @@ private:
     Pion pion;
     Jeu* jeu;
     bool prison; // si on vas en prison
+    Possessions p;
 
 protected:
     int solde;
@@ -33,16 +37,25 @@ public:
     int getSolde() const;
     const Jeu &getJeu() const{return *this->jeu;}
     bool getPrison(){return prison;}
+    Possessions getPossessions(){return p;}
+
 
     void setNom(const string &nom);
     void setPion(Pion& pion);
     void setSolde(int solde);
     void setJeu(Jeu* jeu){this->jeu = jeu;}
     void setPrison(bool prison){ this->prison = prison;}
+    void setPossessions(Possessions& p){this->p = p;}
+
+
 
     void jouer(int nbCases);
     void crediter(const int montant);
     void debiter(const int montant);
+    int nbPossessions(){return this->p.getNbPossessions();}
+    void addPossession(Propriete* p){this->p.addPossession(p);}
+    void removePossession(Propriete* p){this->p = *this->p.removePossession(p);}
+
 
 
     void afficheSolde();

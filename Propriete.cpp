@@ -4,6 +4,7 @@
 
 #include "Propriete.h"
 
+
 Propriete::Propriete(string nom, int loyer,int prixAchat):
 Case(nom){
 	this->loyer = loyer;

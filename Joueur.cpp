@@ -5,6 +5,8 @@
 
 #include "Joueur.h"
 #include "Jeu.h"
+#include "Propriete.h"
+
 
 Joueur::Joueur(){
 }
@@ -15,6 +17,7 @@ Joueur::Joueur(string nom, Pion p, Jeu* jeu, int solde){
 	this->solde = solde;
 	this->jeu = jeu;
 	this->prison = false;
+	this->p = Possessions();
 	// TODO attribut tour pour savoir si c'est notre tour
 }
 
