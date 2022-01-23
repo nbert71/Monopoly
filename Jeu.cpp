@@ -95,17 +95,18 @@ void Jeu::tour(){
 		cout << "Vous avez lance les des et vous avez eu " ;
 		int valeur = gobelet.getValeurG();
 		cout << " soit un total de " << valeur << endl;
-		joueurs[nJoueur].jouer(valeur);
 		cout << endl;
 		afficheMonopoly();
 		if (getGobelet().Double()){
 			doublet = true;
 			nbDoublets += 1;
 		}
+		if (nbDoublets == 3){
+			joueurs[nJoueur].getPion().goToPrison();
+		}else{
+			joueurs[nJoueur].jouer(valeur);
+		}
 		cout << endl << endl;
-	}
-	if (nbDoublets == 3){
-		joueurs[nJoueur].getPion().goToPrison();
 	}
 	nJoueur = (nJoueur + 1) % nbJoueurs;
 }
