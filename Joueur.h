@@ -61,7 +61,7 @@ public:
     void afficheSolde();
 
     void affiche(){
-    	cout << nom << ", votre solde est " << solde;
+    	cout << nom << ", votre solde est " << solde << " $";
     }
     void affichePion(){
     	cout << &pion;

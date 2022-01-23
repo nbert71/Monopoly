@@ -23,32 +23,33 @@ void Terrain::setCouleur(const string &couleur) {
 
 
 void Terrain::arreterSur(Joueur* j) {
-	cout << "Votre solde est de " << j->getSolde() << " $" << endl;
 	if (this->proprietaire == NULL){
 		if (j->getSolde()-prixAchat > 0){
-			bool achat;
+			cout << "Ce terrain coûte " << loyer << " $" << endl;
+			bool achat = false;
 			string resultat;
 			bool reply = false;
 			do{
 				cout << "Voulez vous acheter ce terrain ? (tappez y ou n)" << endl;
+				//cin >> resultat;
 				cin >> resultat;
 				if (resultat == "y\n"){
-					achat = true;
 					reply = true;
 				}
 				if (resultat == "n\n"){
-					achat = false;
 					reply = true;
 				}
 			}
 			while (reply);
 
+			if (resultat == "y"){
+				achat = true;
+			}
+
 			if (proprietaire == NULL && achat == true){
 				j->debiter(prixAchat);
 				proprietaire = j;
-			}else if (proprietaire != NULL){
-				j->debiter(loyer);
-				proprietaire->crediter(loyer);
+				cout << "Votre nouveau solde est de " << j->getSolde() << " $" << endl;
 			}else{
 				// TODO enchères
 			}
