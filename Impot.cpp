@@ -13,5 +13,6 @@ Impot::~Impot() {
 }
 
 void Impot::arreterSur(Joueur* j){
-
+    cout << "Vous devez payer les impots, versez " << loyer << "$ à la banque" << endl;
+    j->debiter(loyer);
 }
