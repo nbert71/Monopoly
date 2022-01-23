@@ -14,20 +14,13 @@ Plateau::~Plateau(){
 
 }
 
-void Plateau::creerCases(){
-	Case* c = this->cases;
-	while(c->getSuivante() != NULL){
-		c = c->getSuivante();
-	}
-	c->setSuivante(new Case());
-}
 
 void Plateau::lierCases(Case* ca){
 	Case* c = this->cases;
 	while(c->getSuivante() != NULL){
 		c = c->getSuivante();
 	}
-	c->setSuivante(new Case());
+	c->setSuivante();
 	c->setSuivante(ca);
 }
 

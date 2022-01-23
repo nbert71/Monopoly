@@ -12,3 +12,6 @@ Impot::~Impot() {
 	// TODO Auto-generated destructor stub
 }
 
+void Impot::arreterSur(Joueur* j){
+
+}

@@ -8,6 +8,6 @@ Depart::~Depart(){
 
 }
 
-void Depart::arreterSur(){
+void Depart::arreterSur(Joueur* j){
 
 }

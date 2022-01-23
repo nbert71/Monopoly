@@ -14,7 +14,7 @@ class Chance : public Case{ // @suppress("Class has a virtual method and non-vir
 public:
 	Chance():Case("Chance"){};
 	~Chance();
-    void arreterSur();
+    void arreterSur(Joueur* j);
 };
 
 

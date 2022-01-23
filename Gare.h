@@ -12,7 +12,7 @@ class Gare : public Propriete{
 public:
 	Gare(string nom="",int prixAchat=200);
 	~Gare();
-	void arreterSur(); // loyer à calculer
+	void arreterSur(Joueur* j); // loyer à calculer
 };
 
 

@@ -10,7 +10,7 @@
 #include <utility>
 using namespace std;
 
-
+class Joueur;
 class Case { // @suppress("Class has a virtual method and non-virtual destructor")
 private:
 
@@ -27,7 +27,7 @@ public:
 
     virtual ~Case();
 
-    virtual void arreterSur();
+    virtual void arreterSur(Joueur* j) = 0;
 
 
 
@@ -50,7 +50,7 @@ public:
     Case* getSuivante(){
 		return this->suivante;
 	}
-	void setSuivante(Case* suiv){
+	void setSuivante(Case* suiv = NULL){
 		this->suivante = suiv;
 	}
 

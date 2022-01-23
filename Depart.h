@@ -6,6 +6,7 @@
 #define MONOPOLY_DEPART_H
 
 #include "Case.h"
+#include "Joueur.h"
 
 #include <iostream>
 using namespace std;
@@ -14,7 +15,7 @@ class Depart : public Case{ // @suppress("Class has a virtual method and non-vir
 public:
 	Depart():Case("Depart"){};
 	~Depart();
-    void arreterSur();
+    void arreterSur(Joueur* j);
 };
 
 

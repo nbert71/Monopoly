@@ -12,7 +12,7 @@ class Compagnie : public Propriete { // @suppress("Class has a virtual method an
 public:
 	Compagnie(string nom,int prixAchat=0); // il faudra calculer le montant du loyer
 	~Compagnie();
-	void arreterSur();
+	void arreterSur(Joueur* j);
 };
 
 

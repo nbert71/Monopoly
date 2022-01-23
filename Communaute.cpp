@@ -8,6 +8,6 @@ Communaute::~Communaute(){
 
 }
 
-void Communaute::arreterSur(){
+void Communaute::arreterSur(Joueur* j){
 
 }

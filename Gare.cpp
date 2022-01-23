@@ -13,6 +13,6 @@ Gare::~Gare(){
 
 }
 
-void Gare::arreterSur(){
+void Gare::arreterSur(Joueur* j){
 
 }

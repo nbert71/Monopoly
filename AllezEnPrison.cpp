@@ -11,4 +11,6 @@
 AllezEnPrison::~AllezEnPrison() {
 	// TODO Auto-generated destructor stub
 }
+void AllezEnPrison::arreterSur(Joueur* j){
 
+}

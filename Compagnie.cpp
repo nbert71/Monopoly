@@ -13,6 +13,6 @@ Compagnie::~Compagnie(){
 
 }
 
-void Compagnie::arreterSur(){ // loyer à calculer en fonction des dés jetés
+void Compagnie::arreterSur(Joueur* j){ // loyer à calculer en fonction des dés jetés
 
 }

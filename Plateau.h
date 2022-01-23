@@ -21,7 +21,6 @@ public:
 
     Case* getCases(){return cases;}
 
-    void creerCases();
     void lierCases(Case* c);
 
     void affichePlateau();

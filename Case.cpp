@@ -3,7 +3,7 @@
 //
 
 #include "Case.h"
-
+#include "Joueur.h"
 
 
 Case::Case(){
@@ -20,6 +20,4 @@ Case::~Case(){
 
 }
 
-void Case::arreterSur(){
 
-}

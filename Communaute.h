@@ -14,7 +14,7 @@ class Communaute : public Case { // @suppress("Class has a virtual method and no
 public:
 	Communaute():Case("Caisse de communauté"){};
 	~Communaute();
-    void arreterSur();
+    void arreterSur(Joueur* j);
 };
 
 

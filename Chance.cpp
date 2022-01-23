@@ -8,6 +8,6 @@ Chance::~Chance(){
 
 }
 
-void Chance::arreterSur(){
+void Chance::arreterSur(Joueur* j){
 
 }

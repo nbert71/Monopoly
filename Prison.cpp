@@ -9,6 +9,6 @@ Prison::~Prison(){
 
 }
 
-void Prison::arreterSur(){
+void Prison::arreterSur(Joueur* j){
 
 }

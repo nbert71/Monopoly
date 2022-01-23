@@ -15,7 +15,7 @@ class Prison : public Case{ // @suppress("Class has a virtual method and non-vir
 public:
 	Prison():Case("Prison"){};
 	~Prison();
-    void arreterSur();
+    void arreterSur(Joueur* j);
 };
 
 

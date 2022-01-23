@@ -46,7 +46,7 @@ void Joueur::setSolde(int solde) {
 }
 
 void Joueur::jouer(int nbCases) {
-	pion.deplacer(nbCases)->arreterSur();
+	pion.deplacer(nbCases)->arreterSur(this);
 }
 
 void Joueur::crediter(int montant) {

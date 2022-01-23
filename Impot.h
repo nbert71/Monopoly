@@ -12,6 +12,7 @@
 using namespace std;
 
 #include "Case.h"
+#include "Joueur.h"
 
 class Impot: public Case {
 private:
@@ -22,6 +23,8 @@ public:
 
 	int getLoyer() const;
 	void setLoyer(int loyer);
+
+	void arreterSur(Joueur* j);
 
 	void affiche(){
 		cout << nom << " " << loyer << "$";
