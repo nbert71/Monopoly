@@ -47,15 +47,17 @@ void Compagnie::arreterSur(Joueur* j){ // loyer � calculer en fonction des d�
             cout << "Vous êtes sur votre propriété : " << getNom();
         }
         else { // Il faut lancer les dés et multiplier le résultat par 4 pour connaître le loyer à payer !
-			cout << "Vous lancez les dés pour connaître le montant du loyer à payer." << endl;
-			Gobelet  lancer = Gobelet(6);
-			cout << "Vous avez obtenu " ;
-			int valeur = lancer.getValeurG();
-			cout << " soit au total " << valeur  << " !" << endl;
-			int nouveauLoyer = valeur * 4;
-			cout << "Vous payez votre loyer de " << nouveauLoyer << "$ à " << proprietaire -> getNom() << " ." << endl;
-			j -> debiter(nouveauLoyer);
-			proprietaire -> crediter(nouveauLoyer);
-			cout << "Votre nouveau solde est de " << j -> getSolde() << "$." << endl;
+        	if (proprietaire != j){
+				cout << "Vous lancez les dés pour connaître le montant du loyer à payer." << endl;
+				Gobelet  lancer = Gobelet(6);
+				cout << "Vous avez obtenu " ;
+				int valeur = lancer.getValeurG();
+				cout << " soit au total " << valeur  << " !" << endl;
+				int nouveauLoyer = valeur * 4;
+				cout << "Vous payez votre loyer de " << nouveauLoyer << "$ à " << proprietaire -> getNom() << " ." << endl;
+				j -> debiter(nouveauLoyer);
+				proprietaire -> crediter(nouveauLoyer);
+				cout << "Votre nouveau solde est de " << j -> getSolde() << "$." << endl;
+        	}
 		}
 	}
