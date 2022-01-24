@@ -42,7 +42,7 @@ int main()
 
 	Jeu j = Jeu();
 	//j.init(1,"a","x");
-	j.init();
+	j.init(1,"a","x");
 	j.jeux();
 
 	/*

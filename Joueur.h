@@ -55,6 +55,7 @@ public:
     int nbPossessions(){return this->p.getNbPossessions();}
     void addPossession(Propriete* p){this->p.addPossession(p);}
     void removePossession(Propriete* p){this->p = *this->p.removePossession(p);}
+    void vendPossession();
 
 
 
