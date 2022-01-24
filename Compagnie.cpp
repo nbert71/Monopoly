@@ -48,7 +48,7 @@ void Compagnie::arreterSur(Joueur* j){ // loyer ï¿½ calculer en fonction des dï¿
 			cout << "Vous avez obtenu " ;
 			int valeur = lancer.getValeurG();
 			cout << " soit au total " << valeur  << " !" << endl;
-			int nouveauLoyer = valeur*4;
+			int nouveauLoyer = valeur * 4;
 			cout << "Vous payez votre loyer de " << nouveauLoyer << "$ Ã  " << proprietaire -> getNom() << " ." << endl;
 			j -> debiter(nouveauLoyer);
 			proprietaire -> crediter(nouveauLoyer);
