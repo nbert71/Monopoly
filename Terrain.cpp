@@ -57,9 +57,11 @@ void Terrain::arreterSur(Joueur* j) {
 			cout << "Vous ne pouvez pas acheter ce Terrain car vous être trop pauvre !!!";
 		}
 	}else{
-		cout << "Vous payez " << loyer << " $ à " << proprietaire->getNom() << endl;
-		j->debiter(loyer);
-		proprietaire->crediter(loyer);
+		if (proprietaire != j){
+			cout << "Vous payez " << loyer << " $ à " << proprietaire->getNom() << endl;
+			j->debiter(loyer);
+			proprietaire->crediter(loyer);
+		}
 	}
 }
 
