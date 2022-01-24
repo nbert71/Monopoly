@@ -41,9 +41,11 @@ public:
     	this->gobelet = gobelet;
     }
 
+    void afficheEnJeu();
     void tour();
-
+    void removeJoueur(int n);
     void jeux();
+
 
     Joueur* getJoueurs(){return this->joueurs;}
     void setJoueurs(Joueur* joueurs){this->joueurs = joueurs;}

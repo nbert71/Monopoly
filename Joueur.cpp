@@ -60,7 +60,7 @@ void Joueur::debiter(int montant) {
 	else{
 		this->solde -= montant;
 		// on paye et après on vend jusqu'à être positif
-		while (solde < 0){
+		while (solde < 0 && nbPossessions() > 0){
 			this->vendPossession();
 		}
 	}
@@ -68,6 +68,7 @@ void Joueur::debiter(int montant) {
 
 void Joueur::vendPossession(){
 	this->crediter(this->p.getPossession()->getPrixAchat());
+	this->p.getPossession()->setProprietaire(NULL);
 	this->p = *this->p.removePossession(this->p.getPossession());
 }
 

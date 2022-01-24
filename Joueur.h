@@ -56,7 +56,7 @@ public:
     void addPossession(Propriete* p){this->p.addPossession(p);}
     void removePossession(Propriete* p){this->p = *this->p.removePossession(p);}
     void vendPossession();
-
+    bool perdu(){return (this->nbPossessions() == 0 && solde < 0);}
 
 
     void afficheSolde();

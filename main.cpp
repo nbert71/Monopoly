@@ -11,6 +11,7 @@ using namespace std;
 #include "Joueur.h"
 #include "Possessions.h"
 #include "Gare.h"
+#include "Joueur.h"
 
 int main()
 {
@@ -40,9 +41,10 @@ int main()
     */
 
 
+
 	Jeu j = Jeu();
+	j.init();
 	//j.init(1,"a","x");
-	j.init(1,"a","x");
 	j.jeux();
 
 	/*

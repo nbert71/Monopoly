@@ -95,8 +95,7 @@ void Jeu::tour(){
 		cout << "Vous avez lance les des et vous avez eu " ;
 		int valeur = gobelet.getValeurG();
 		cout << " soit un total de " << valeur << endl;
-		cout << endl;
-		afficheMonopoly();
+
 		if (getGobelet().Double()){
 			doublet = true;
 			nbDoublets += 1;
@@ -106,15 +105,42 @@ void Jeu::tour(){
 		}else{
 			joueurs[nJoueur].jouer(valeur);
 		}
+		cout << endl;
+		afficheMonopoly();
+		if (joueurs[nJoueur].perdu()){
+			cerr << joueurs[nJoueur].getNom() << " a perdu !" << endl;
+			removeJoueur(nJoueur);
+		}
+
 		cout << endl << endl;
 	}
 	nJoueur = (nJoueur + 1) % nbJoueurs;
 }
 
+void Jeu::removeJoueur(int n){
+	for (int i = n; i < nbJoueurs - 1; i++){
+		joueurs[i] = joueurs[i+1];
+	}
+	nbJoueurs -= 1;
+}
+
+void Jeu::afficheEnJeu(){
+	for (int i = 0; i < nbJoueurs; i++){
+		cout << joueurs[i].getNom();
+		if (i != nbJoueurs - 1){
+			cout << ", ";
+		}
+	}
+	cout << endl;
+}
+
 void Jeu::jeux(){
-	for (int i=0; i < 10; i++){ // while il reste un seul joueur
+	while(nbJoueurs > 1){
+		cout << "Joueurs encore en jeu : ";
+		afficheEnJeu();
 		tour();
 	}
+	cout << "Le joueur gagnant est " << joueurs[0].getNom()<< endl;
 }
 
 void Jeu::loadMonopolyPlateau(){
