@@ -37,14 +37,14 @@ void Gare::arreterSur(Joueur* j){
 
 			}else {
 				//TODO Enchères;
-			};
+			}
 		}else {
 			cout << "Solde insuffisant, vous ne pouvez pas acheter cette gare !" << endl;
-		};
+		}
 	}else {
 		cout << "Vous payez votre loyer de " << loyer << "$ à " << proprietaire -> getNom() << " !" << endl;
 		j -> debiter(loyer);
 		proprietaire -> crediter(loyer);
 		cout << "Votre nouveau solde est de " << j -> getSolde() << " $." << endl;
-	};
+	}
 }
