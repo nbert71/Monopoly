@@ -42,7 +42,11 @@ void Compagnie::arreterSur(Joueur* j){ // loyer � calculer en fonction des d�
 			}else {
 				cout << "Solde insuffisant, vous ne pouvez pas acheter cette gare !" << endl;
 			}
-		}else { // Il faut lancer les dés et multiplier le résultat par 4 pour connaître le loyer à payer !
+		}
+        else if (proprietaire == j){
+            cout << "Vous êtes sur votre propriété : " << getNom();
+        }
+        else { // Il faut lancer les dés et multiplier le résultat par 4 pour connaître le loyer à payer !
 			cout << "Vous lancez les dés pour connaître le montant du loyer à payer." << endl;
 			Gobelet  lancer = Gobelet(6);
 			cout << "Vous avez obtenu " ;
