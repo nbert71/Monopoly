@@ -21,7 +21,7 @@ void Compagnie::arreterSur(Joueur* j){ // loyer ï¿½ calculer en fonction des dï¿
 				string resultat;
 				bool reply = false;
 				do {
-					cout << "Voulez-vous acheter cette gare ? (tapez y ou n) " << endl;
+					cout << "Voulez-vous acheter cette compagnie ? (tapez y ou n) " << endl;
 					cin >> resultat;
 					if (resultat == "y\n") {
 						reply = true;
