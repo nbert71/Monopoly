@@ -20,7 +20,11 @@ public:
     void setCouleur(const string &couleur);
     void arreterSur(Joueur* j);
     void affiche(){
-    	cout << couleur[0] << " " << nom << " " << prixAchat << "$";
+    	if (proprietaire != NULL){
+    	cout << couleur[0] << " " << nom << " " << prixAchat << "$" << " @" << proprietaire->getPion().getNom();
+    	}else{
+			cout << this->nom << " " << prixAchat << "$" ;
+        }
     }
 };
 

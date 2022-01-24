@@ -32,7 +32,11 @@ public:
     void arreterSur();
 
     void affiche(){
-		cout << this->nom << " " << prixAchat << "$" ;
+    	if (proprietaire != NULL){
+    		cout << this->nom << " " << prixAchat << "$" << " @" << proprietaire->getPion().getNom();
+    	}else{
+    		cout << this->nom << " " << prixAchat << "$" ;
+    	}
 	}
 };
 
