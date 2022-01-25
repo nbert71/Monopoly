@@ -48,6 +48,7 @@ Case* Pion::goToPrison(){
 	joueur->setPrison(true);
 	while (position->getNom() != "Prison"){
 		this->position = position->getSuivante();
+        this->joueur->setPion(*this);
 	}
 	return position;
 }
