@@ -48,7 +48,7 @@ void Jeu::init(int n,string nom_, string c){
 			nom = nom_;
 		}
 		if(c == ""){
-			cout << "Saisissez le symbole du pion (+,x,=,%,~,@,µ) : "; // TODO faire en sorte qu'on puisse avoir que ça et pas deux fois
+			cout << "Saisissez le symbole du pion (+,x,=,%,~,@,ï¿½) : "; // TODO faire en sorte qu'on puisse avoir que ï¿½a et pas deux fois
 			cin >> symbole;
 		}else{
 			symbole = c;
@@ -59,7 +59,7 @@ void Jeu::init(int n,string nom_, string c){
 
 		joueurs[i] = a;
 
-		aa.setPosition(plateau.getCases()); // on set la position initiale à la première case du plateau aka le Depart
+		aa.setPosition(plateau.getCases()); // on set la position initiale ï¿½ la premiï¿½re case du plateau aka le Depart
 		aa.setJoueur(joueurs[i]);
 		joueurs[i].setPion(aa);
 
@@ -83,38 +83,43 @@ void Jeu::setPlateau(const Plateau &p) {
 void Jeu::tour(){
 	bool doublet = true;
 	int nbDoublets = 0;
-	while (doublet == true && nbDoublets < 3){
-		try{
-			system("pause"); // permet d'attendre une entrée pour lancer les dés, mais ne marche que sous windows
-		}
-		catch(...){ // catch toutes les erreurs
-			cerr << "Vous n'etes pas sous windows, les des se lancent tout seuls !";
-		}
-		doublet = false;
-		cout << joueurs[nJoueur] << endl;
-		cout << "Vous avez lance les des et vous avez eu " ;
-		int valeur = gobelet.getValeurG();
-		cout << " soit un total de " << valeur << endl;
+	while (doublet == true && nbDoublets < 3) {
+        try {
+            system("pause"); // permet d'attendre une entrï¿½e pour lancer les dï¿½s, mais ne marche que sous windows
+        }
+        catch (...) { // catch toutes les erreurs
+            cerr << "Vous n'etes pas sous windows, les des se lancent tout seuls !";
+        }
 
-		if (getGobelet().Double()){
-			doublet = true;
-			nbDoublets += 1;
-		}
-		if (nbDoublets == 3){
-			joueurs[nJoueur].getPion().goToPrison();
-		}else{
-			joueurs[nJoueur].jouer(valeur);
-		}
-		cout << endl;
-		afficheMonopoly();
-		if (joueurs[nJoueur].perdu()){
-			cerr << joueurs[nJoueur].getNom() << " a perdu !" << endl;
-			removeJoueur(nJoueur);
-		}
+        if (joueurs[nJoueur].getPrison()) { // vÃ©rifie si le joueur est en prison et reduit la peine d'un tour
+            cout << joueurs[nJoueur] << endl;
+            cout << "Vous etes en prison !" << endl;
+        } else {
+            doublet = false;
+            cout << joueurs[nJoueur] << endl;
+            cout << "Vous avez lance les des et vous avez eu ";
+            int valeur = gobelet.getValeurG();
+            cout << " soit un total de " << valeur << endl;
 
-		cout << endl << endl;
-	}
-	nJoueur = (nJoueur + 1) % nbJoueurs;
+            if (getGobelet().Double()) {
+                doublet = true;
+                nbDoublets += 1;
+            }
+            if (nbDoublets == 3) {
+                joueurs[nJoueur].getPion().goToPrison();
+            } else {
+                joueurs[nJoueur].jouer(valeur);
+            }
+        }
+        cout << endl;
+        afficheMonopoly();
+        if (joueurs[nJoueur].perdu()) {
+            cerr << joueurs[nJoueur].getNom() << " a perdu !" << endl;
+            removeJoueur(nJoueur);
+        }
+        cout << endl << endl;
+        nJoueur = (nJoueur + 1) % nbJoueurs;
+    }
 }
 
 void Jeu::removeJoueur(int n){
@@ -144,7 +149,7 @@ void Jeu::jeux(){
 }
 
 void Jeu::loadMonopolyPlateau(){
-	// depart déjà setup
+	// depart dï¿½jï¿½ setup
 	plateau.lierCases(new Terrain("Boulevard de Belleville","marron",60,60));
 	plateau.lierCases(new Communaute());
 	plateau.lierCases(new Terrain("Rue Lecourbe","marron",60,60));
@@ -153,11 +158,11 @@ void Jeu::loadMonopolyPlateau(){
 	plateau.lierCases(new Terrain("Rue de vaugirard","ciel", 100, 100));
 	plateau.lierCases(new Chance());
 	plateau.lierCases(new Terrain("Rue de Courcelles","ciel",100,100));
-	plateau.lierCases(new Terrain("Avenue de la république","ciel",120,120));
+	plateau.lierCases(new Terrain("Avenue de la rï¿½publique","ciel",120,120));
 
 	plateau.lierCases(new Prison());
 	plateau.lierCases(new Terrain("Boulevard de la viliette", "mauve", 140,140));
-	plateau.lierCases(new Compagnie("compagnie de distribution d'electricité",150));
+	plateau.lierCases(new Compagnie("compagnie de distribution d'electricitï¿½",150));
 	plateau.lierCases(new Terrain("Avenue de Neuilly","mauve", 140, 140));
 	plateau.lierCases(new Terrain("Rue de Paradis","mauve",160,160));
 	plateau.lierCases(new Gare("Gare de Lyon"));
@@ -172,7 +177,7 @@ void Jeu::loadMonopolyPlateau(){
 	plateau.lierCases(new Terrain("Boulevard Malesherbes","rouge",220,220));
 	plateau.lierCases(new Terrain("Avenue Henri-Martin","rouge",240,240));
 	plateau.lierCases(new Gare("Gare du Nord"));
-	plateau.lierCases(new Terrain("Faubourg Saint-Honoré","jaune",260,260));
+	plateau.lierCases(new Terrain("Faubourg Saint-Honorï¿½","jaune",260,260));
 	plateau.lierCases(new Terrain("Place de la bourse","jaune", 260,260));
 	plateau.lierCases(new Compagnie("Compagnie de distribution des eaux",150));
 	plateau.lierCases(new Terrain("Rue de la Fayette","jaune",280,280));

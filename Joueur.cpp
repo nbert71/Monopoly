@@ -16,7 +16,7 @@ Joueur::Joueur(string nom, Pion p, Jeu* jeu, int solde){
 	this->pion = p;
 	this->solde = solde;
 	this->jeu = jeu;
-	this->prison = false;
+	this->prison = 0;
 	this->p = Possessions();
 	// TODO attribut tour pour savoir si c'est notre tour
 }
@@ -31,6 +31,25 @@ Pion Joueur::getPion() {
 
 int Joueur::getSolde() const {
     return solde;
+}
+
+int Joueur::getPrison() {
+    cout << prison << endl;
+    if ( prison == 0 || prison > 3 ){ // si joueur en prison depuis 3 tours
+        this->setPrison(0);
+    }
+    else {
+        this->setPrison(prison+1);
+        cout << "Souhaitez-vous sortir pour 50$ ?" << endl;
+        string input;
+        cin >> input;
+        if (input == "y"){
+            this->debiter(50);
+            this->setPrison(0);
+            cout << "Vous sortez de prison et votre solde est de : " << this->solde << endl;
+        }
+    }
+    return prison;
 }
 
 void Joueur::setNom(const string &nom) {
@@ -59,7 +78,7 @@ void Joueur::debiter(int montant) {
 	}
 	else{
 		this->solde -= montant;
-		// on paye et après on vend jusqu'à être positif
+		// on paye et aprï¿½s on vend jusqu'ï¿½ ï¿½tre positif
 		while (solde < 0 && nbPossessions() > 0){
 			this->vendPossession();
 		}

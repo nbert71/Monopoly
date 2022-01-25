@@ -21,7 +21,7 @@ private:
     string nom;
     Pion pion;
     Jeu* jeu;
-    bool prison; // si on vas en prison
+    int prison; // si on vas en prison
     Possessions p;
 
 protected:
@@ -36,7 +36,7 @@ public:
     Pion getPion();
     int getSolde() const;
     const Jeu &getJeu() const{return *this->jeu;}
-    bool getPrison(){return prison;}
+    int getPrison();
     Possessions getPossessions(){return p;}
 
 
@@ -44,7 +44,7 @@ public:
     void setPion(Pion& pion);
     void setSolde(int solde);
     void setJeu(Jeu* jeu){this->jeu = jeu;}
-    void setPrison(bool prison){ this->prison = prison;}
+    void setPrison(int prison){ this->prison = prison;}
     void setPossessions(Possessions& p){this->p = p;}
 
 
